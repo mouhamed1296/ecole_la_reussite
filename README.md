@@ -23,7 +23,7 @@ C'est une application des gestion d'une école mixte primaire et secondaire perm
 
 L'application va permettre à l'école:
 
-## L'administrateur peut:
+## L'administrateur peut
 
     Ajouter un élève, un employé
     Modifier un élève, un employé
@@ -54,4 +54,3 @@ un employé peut :
     Voir son compte
     Modifier login et mot de passe
     Perforer les actions liées à son poste
-
