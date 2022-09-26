@@ -53,4 +53,4 @@ un employé peut :
 
     Voir son compte
     Modifier login et mot de passe
-    Perforer les actions liées à son poste
+    Performer les actions liées à son poste
