@@ -7,7 +7,7 @@ Pour chaque membre:
     - il faut créer un dossier sur votre machine (nommée projet_gestion_ecole) 
     - ensuite ouvrez ce dossier avec vscode, et ouvrez le terminal de vscode
     - tapez la commande
-    git clone https://github.com/mouhamed1296/ecole_la_reussite.git .
+    git clone -branch dev https://github.com/mouhamed1296/ecole_la_reussite.git .
 
 C'est une application des gestion d'une école mixte primaire et secondaire permettant de digitaliser la gestion administrative en ce qui concerne :
 
