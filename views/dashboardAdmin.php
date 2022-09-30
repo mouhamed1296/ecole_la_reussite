@@ -19,91 +19,87 @@
 
 <body>
     <!---->
-    <footer>
+    <header>
         <div id="Entete">
-            <i class="fa-sharp fa-solid fa-bars"></i>
+                <div class="nav_menu">  
+                    <div><a href="#" > <p class="nav_item">Ajouter Employés</p> </a></div>
+                    <div><a href="#" > <p class="nav_item">Lister Employés</p> </a></div>
+                    <div><a href="#" > <p class="nav_item">Ajouter ÉLéves </p> </a></div>
+                    <div><a href="#" > <p class="nav_item">lister ÉLéves  </p> </a></div>
 
-            <br>
-            <br>
+                </div> 
+                <div>  <button type="submit" id="btn_deconnect">Se Déconnecter</button></div>
+        </div>
 
-            <h2>Tableau de bord</h2>
-
-                <br>
-                <br>
-
-                <ul id="nav_menu">
-                    <div class="item">
-                        <li>
-                            <a href="#" > Ajouter Emploué</a>
-                        </li>
-                    </div>
-
-                    <div class="item">
-                        <li>
-                            <a href="#" > Modifier Employé</a>
-                        </li>
-                    </div>
-
-                    <div class="item">
-                        <li>
-                            <a href="#" > Archiver Employé</a>
-                        </li>
-                    </div>
-
-                    <div class="item">
-                        <li>
-                            <a href="#" > Lister Employé</a>
-                        </li>
-                    </div>
-
-                    <br>
-                    <br>
-
-                    <div class="item">
-                        <li>
-                            <a href="#" > Ajouter ÉLéve</a>
-                        </li>
-                    </div>
-
-                    <div class="item">
-                        <li>
-                            <a href="#" > Modifier ÉLéve</a>
-                        </li>
-                    </div>
-
-                    <div class="item">
-                        <li>
-                            <a href="#" > Archiver ÉLéve</a>
-                        </li>
-                    </div>
-
-                    <div class="item">
-                        <li>
-                            <a href="#" > lister ÉLéve</a>
-                        </li>
-                    </div>
-                </ul>
-
-                <br>
-                <br>
-
-                <button type="submit">Se Déconnecter</button>
-
+    </header>
+    <!---->
+    <mian>
+        <div id="prestationDasboard">
+            <h3>Tableeu de bord Administrateur</h3>
 
         </div>
 
-    </footer>
-    <!---->
-    <mian>
+        <div id="dasboard">
+            <div class="vueEnsemble">  </div>  <div class="para">Employés</div>
+            <div class="vueEnsemble"></div>    <div class="para">Administrateur</div>     
+            <div class="vueEnsemble">  </div>  <div class="para">Élève</div>
+        </div>
+
+        <div id="tab" >
+             <table border="1" cellspacing="0" cellpadding="0" id="tableau">
+                <tr>
+                    <th class="spaceTab">Fonction</th>
+                    <th class="spaceTab">Nom complet</th>
+                    <th class="spaceTab">présence</th>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"> </td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td></td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                </tr>
+            </table> 
+
+        </div>
 
     </main>
     <!---->
     <footer>
 
+        <div id="piedPage">
+
+        </div>
+    
     </footer>
     <!---->
-   
 
+
+   
+<script src="js/dashboardAdmin.js"></script>
 </body>
 
 </html>
