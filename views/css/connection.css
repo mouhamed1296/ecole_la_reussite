@@ -1,0 +1,47 @@
+body{
+    background: #f9f4f4;
+}
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+}
+/* bordure form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #5a3535;
+    background: #f0e4e4;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+    width: 38%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* format des inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* definir un style pour tous les boutons*/
+input[type=submit] {
+    background-color: #dec3c3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: white;
+   color: #5a3535;
+    border: 1px solid #5a3535;
+}
