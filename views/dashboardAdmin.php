@@ -21,14 +21,17 @@
     <!---->
     <header>
         <div id="Entete">
+             <!-- <div><img src="images/logo.png" alt="logo" width=20%></div> -->
                 <div class="nav_menu">  
                     <div><a href="#" > <p class="nav_item">Ajouter Employés</p> </a></div>
                     <div><a href="#" > <p class="nav_item">Lister Employés</p> </a></div>
                     <div><a href="#" > <p class="nav_item">Ajouter ÉLéves </p> </a></div>
                     <div><a href="#" > <p class="nav_item">lister ÉLéves  </p> </a></div>
 
+                    <div>  <button type="submit" id="btn_deconnect">Se Déconnecter</button></div>
+
                 </div> 
-                <div>  <button type="submit" id="btn_deconnect">Se Déconnecter</button></div>
+               
         </div>
 
     </header>
