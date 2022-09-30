@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule acceuil views/index.php
+RewriteRule connexion views/connection.php
+RewriteRule admin views/dashboardAdmin.php
