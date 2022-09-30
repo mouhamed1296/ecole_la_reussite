@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,18 +17,19 @@
 
 <body>
 <header class="header">
-   <div class="haut">
+   
               <img src="images/logo.png" alt="logo" id="logo">
-        
-                <a href="" ><i class="fa-solid fa-house"></i>Acceuil</a>
-                <a href=""><i class="fa-solid fa-user"></i>Se connecter</a>
-        
-                </div>
+        <ul class="acceuil">
+            
+                <a href="" ><i class="fa-solid fa-house"></i> Acceuil</a>
+                <a href=""><i class="fa-solid fa-user"></i> Se connecter</a>
+                
+        </ul>
    
 </header>
 <section>
     <div>
-        <img src="images/prem3.jpg" alt="image">
+        <img src="images/prem3.jpg" alt="image" id="photo">
     </div>
     <div>
          <h1>
@@ -51,5 +51,3 @@
 </body>
 
 </html>
-=======
->>>>>>> dev
