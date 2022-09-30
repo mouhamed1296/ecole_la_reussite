@@ -1,0 +1,17 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+#Entete 
+{
+    border: solid black;
+
+
+}
+
+.item li
+{
+    text-decoration: none;
+    list-style: none;
+}
