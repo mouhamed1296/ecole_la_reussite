@@ -11,18 +11,14 @@
         <form action="traitement.php" method=post>
             <table border=0>
                 <tr bgcolor=#cccccc>
-                    <th width=150>Libellé</th>
+                    <th width=150>Identifiant</th>
                     <th width=150>Description</th>
+                    <th width=150>Action</th>
                 </tr>
-                <tr>
-                    <th>Identifiant élève</th>
-                    <td align="center"><input type="text" name="idEleve" 
-                    size="50" maxlength="3"></td>
-                </tr> 
                 <tr>
                     <th>Nom</th>
                     <td align="center"><input type="text" name="nom"
-                    size="50" maxlength="3"></td>
+                    size="50" maxlength="3"></td><td><button type="submit">Modifier</button> <button type="submit">Archiver</button></td>
                 </tr>
                 <tr>
                     <th>Prénom</th>
