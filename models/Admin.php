@@ -1,6 +1,6 @@
 <?php
-namespace Models;
-
+require "Employe.php";
+//use Employe;
 class Admin extends Employe {
     /**
      * Class constructor.
@@ -11,13 +11,15 @@ class Admin extends Employe {
     }
     
     public static function seConnecter($email, $password){
-        $conn = require_once('config/db.php');
-        $sql = "SELECT id, email FROM employe WHERE email='$email' AND mdp='$password' AND statut = 'admin'";
+        /* $conn = require_once('../config/db.php');
+        $sql = "SELECT mdp FROM employe WHERE email='$email'";
         $res = $conn->query($sql);
         if ($res->rowCount() > 0){
-            $user = $res->fetchAll();
-            echo "connecté";
-            exit;
+            $mdp = $res->fetchColumn();
+            if (password_verify($password, $mdp)){
+                return true;
+            }
         }
+        return false; */
     }
 }

@@ -1,5 +1,4 @@
 <?php
-namespace Models;
 abstract class Employe
 {
     protected $idEmp;
