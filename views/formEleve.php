@@ -5,48 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription Élève</title>
+
+    <link rel="stylesheet" href="css/dashboardAdmin.css">
 </head>
 <body>
-<div>
+<div id="form">
         <form action="traitement.php" method=post>
             <table border=0>
                 <tr bgcolor=#cccccc>
                     <th width=150>Identifiant</th>
                     <th width=150>Description</th>
-                    <th width=150>Action</th>
+
                 </tr>
                 <tr>
-                    <th>Nom</th>
+                    <th bgcolor=#cccccc>Nom</th>
                     <td align="center"><input type="text" name="nom"
-                    size="50" maxlength="3"></td><td><button type="submit">Modifier</button> <button type="submit">Archiver</button></td>
+                    size="50" maxlength="3" ></td>
                 </tr>
                 <tr>
-                    <th>Prénom</th>
+                    <th bgcolor=#cccccc>Prénom</th>
                     <td align="center"><input type="text" name="prenom" 
                     size="50" maxlength="3"></td>
                 </tr>
                 <tr>
-                    <th>Email</th>
+                    <th bgcolor=#cccccc>Email</th>
                     <td align="center"><input type="text" name="mail" 
                     size="50" maxlength="3"></td>
                 </tr>
                 <tr>
-                    <th>Niveau</th>
+                    <th bgcolor=#cccccc>Niveau</th>
                     <td align="center"><input type="text" name="niveau" 
                     size="50" maxlength="3"></td>
                 </tr> 
                 <tr>
-                    <th>Nom du Tuteur</th>
+                    <th bgcolor=#cccccc>Nom du Tuteur</th>
                     <td align="center"><input type="text" name="tuteur" 
                     size="50" maxlength="3"></td>
                 </tr>  
                 <tr>
-                    <th>Numéro Tuteur</th>
+                    <th bgcolor=#cccccc>Numéro Tuteur</th>
                     <td align="center"><input type="text" name="num_tuteur" 
                     size="50" maxlength="3"></td>
                 </tr>     
                 <tr>
-                    <th>Date de naissance</th>
+                    <th bgcolor=#cccccc>Date de naissance</th>
                     <td align="center"><input type="text" name="dateNaissance" 
                     size="50" maxlength="3"></td>
                 </tr> 
@@ -57,7 +59,9 @@
                 </tr>
             </table>
         </form>
-    </div>    
-
+    </div>  
+    
+    
+    <script src="js/dashboardAdmin.js"></script>
 </body>
 </html>
