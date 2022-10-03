@@ -51,5 +51,8 @@ if(isset($email) && isset($mdp)){
         $error["email"] = "Ce champ est requis";
         $error["mdp"] = "Ce champ est requis";
         include_once("views/connection.php");
+        
     }
 }
+
+
