@@ -72,7 +72,7 @@
     <?php
             include "footer.php";
         ?>
-    <!--</footerer>-
+    <!--</footerer>-->
     
     <script src="js/dashboardAdmin.js"></script>
 </body>
