@@ -7,9 +7,13 @@ session_start();
     <meta charset="utf-8">
     <!-- importer le fichier de style -->
     <link rel="stylesheet" href="css/connection.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
+<?php
+include_once "header.php";
+?>
     <div id="container">
         <!-- zone de connexion -->
 
@@ -31,6 +35,9 @@ session_start();
                 ?>
         </form>
     </div>
+    <?php
+include_once "footer.php";
+?>
 </body>
 
 </html>
