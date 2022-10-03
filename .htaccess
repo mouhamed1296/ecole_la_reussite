@@ -10,3 +10,4 @@ RewriteRule modifierEleve views/updateFormEleve.php
 RewriteRule ^css/(.+.css)$ views/css/$1 [L,NC]
 RewriteRule ^js/(.+.js)$ views/js/$1 [L,NC]
 RewriteRule ^images/(.+.*)$ views/images/$1 [L,NC]
+RewriteRule ^images/(.+.*)$ views/images/$1 [L,NC]
