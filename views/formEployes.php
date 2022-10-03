@@ -18,7 +18,7 @@
     <!--</header>-->
 
 <div id="formEmp">
-        <form action="traitementFormEleve.php" method="POST">
+        <form action="../controllers/traitementFormEleve.php" method="POST">
             <table border=0>
                 <tr class="colorChamp">
                     <th width=150 class="colorChamp">Identifiant</th>
@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                     <th class="colorChamp">Nom</th>
-                    <td align="center"><input type="text" name="nom"
+                    <td align="center"><input type="text" name="nom1"
                     size="50"  class="espaceChamp"></td>
                 </tr>
 
@@ -35,13 +35,13 @@
 
                 <tr>
                     <th class="colorChamp">Prénom</th>
-                    <td align="center"><input type="text" name="prenom" 
+                    <td align="center"><input type="text" name="prenom1" 
                     size="50" class="espaceChamp"></td>
                 </tr>
 
                 <tr>
                     <th class="colorChamp">Email</th>
-                    <td align="center"><input type="text" name="mail" 
+                    <td align="center"><input type="text" name="mail1" 
                     size="50" class="espaceChamp"></td>
                 </tr>
                 <tr>
@@ -61,7 +61,7 @@
                 </tr>     
                 <tr>
                     <td colspan="2" align="center">
-                    <input type="submit" value="Enregistrer" class="btnSaveEleve" name="enregistrer">
+                    <input type="submit" value="Enregistrer" class="btnSaveEleve" name="submit1">
                     </td>
                 </tr>
             </table>

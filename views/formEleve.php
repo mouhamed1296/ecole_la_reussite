@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="form">
-        <form action="traitementFormEleve.php" method="POST">
+        <form action="../controllers/traitementFormEleve.php" method="POST">
             <table border=0>
                 <tr class="colorChamp">
                     <th width=150 class="colorChamp">Identifiant</th>
