@@ -45,7 +45,7 @@
                 <tr>
                     <th class="colorChamp">Nom du Tuteur</th>
                     <td align="center"><input type="text" name="tuteur" 
-                    size="50" maxlength="3" class="espaceChamp"></td>
+                    size="50" class="espaceChamp"></td>
                 </tr>  
                 <tr>
                     <th class="colorChamp">Numéro Tuteur</th>
@@ -59,7 +59,7 @@
                 </tr> 
                 <tr>
                     <td colspan="2" align="center">
-                    <input type="submit" value="Enregistrer" class="btnSaveEleve" name="enregistrer">
+                    <input type="submit" value="Enregistrer" class="btnSaveEleve" name="submit">
                     </td>
                 </tr>
             </table>

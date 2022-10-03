@@ -52,7 +52,7 @@
                 <tr>
                     <th class="colorChamp">Salaire</th>
                     <td align="center"><input type="text" name="salaire" 
-                    size="50" maxlength="3" class="espaceChamp"></td>
+                    size="50" class="espaceChamp"></td>
                 </tr>  
                 <tr>
                     <th class="colorChamp">Statut</th>

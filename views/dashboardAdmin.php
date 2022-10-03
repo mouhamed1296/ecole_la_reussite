@@ -52,8 +52,61 @@
             <h3>Tableeu de bord Administrateur</h3>
 
         </div>
+        
+        <div id="tab">
+            <div class="nbrTotal"></div><div class="para">Élève</div>
+            <div class="nbrTotal"></div><div class="para">Employés</div>
+            <div class="nbrTotal"></div><div class="para">Administrateur</div>
+ 
+        </div>
 
-        <p>welcome Admin</p>
+        <!-- <div id="dasboard">
+            <div class="compteur">  </div>  <div class="para">Employés</div>
+            <div class="compteur">  </div>   <div class="para">Administrateur</div>     
+            <div class="compteur">  </div>  <div class="para">Élève</div>
+        </div>
+
+        <div id="tab" >
+             <table border="1" cellspacing="0" cellpadding="0" id="tableau">
+                <tr>
+                    <th class="spaceTab">Fonction</th>
+                    <th class="spaceTab">Nom complet</th>
+                    <th class="spaceTab">présence</th>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"> </td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td></td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                </tr>
+                <tr>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                    <td class="spaceTab"></td>
+                </tr>
+            </table> 
+
+        </div>
+ -->
     </main>
 
      <!-- <footer>-->
