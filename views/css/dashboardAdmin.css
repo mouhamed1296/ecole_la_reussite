@@ -5,6 +5,21 @@
     background: #f9f4f4
 }
 
+#topMenu
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#topMenu a
+{
+    text-decoration: none;
+    color: black;
+}
+#topMenu li
+{
+    list-style: none;
+}
 
 /*main*/
 #prestationDasboard
@@ -86,6 +101,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+#formEmp
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
 
 }
 .colorChamp
