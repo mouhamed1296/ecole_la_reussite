@@ -37,8 +37,11 @@ if(isset($email) && isset($mdp)){
                 if ($statut === "admin"){
                     //vérification du mot de passe
                     if (password_verify($mdp, $password)){
+                        $_SESSION["nom"] = $user["nom"];
+                        $_SESSION["prenom"] = $user["prenom"];
+                        $_SESSION["email"] = $user["email"];
                         //mot de passe vérifié
-                       echo "connecté";
+                       echo 'Bienvenue '.$_SESSION["prenom"].' '.$_SESSION["nom"];
                     } else {
                         //mot de passe incorrect
                         $_SESSION["erreur"] = "mot de passe incorrect";
