@@ -5,3 +5,4 @@ RewriteRule connexion views/connection.php
 RewriteRule admin views/dashboardAdmin.php
 # rewrite css files to their actual path
 RewriteRule ^css/(.+.css)$ views/css/$1 [L,NC]
+RewriteRule ^images/(.+.*)$ views/images/$1 [L,NC]
