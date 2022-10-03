@@ -1,14 +1,3 @@
-<!-- <?php
-    $nom=" ";
-    $nomerror= " ";
-    if(empty($nom)){
-        $nomerror = "donnez votre nom!";
-    }
-
-?>
- -->
-
-
 
 <!DOCTYPE html>
 <html lang="en">

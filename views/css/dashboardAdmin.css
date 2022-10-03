@@ -4,63 +4,7 @@
     box-sizing: border-box;
     background: #f9f4f4
 }
-.acceuil{
-   
-    float: right;
-    gap: 95px;
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-    margin-right: 0px;
-    font-size: 20px;
-    border: solid black;  
-}
-#Entete 
-{
-    border: beige;
-   background-color: beige;
-}
-.nav_menu
-{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-    justify-content: center;
-    align-items: center;
-     border: solid black;
-    
-}
-/*enlever souligné et coleur lien*/
-.nav_item 
-{
-    color: black;
-    word-spacing: 5px;
-    margin: 10px;
 
-}
-.nav_menu a
-{
-    text-decoration: none;
-    color: #5a3535;
-}
-.nav_menu a:hover
-{
-    color: #f0e4e4;
-}
-
-#btn_deconnect
-{
-    border-radius : 20%;
-    padding: 15px;
-    background-color: maroon;
-    color: white;
-}
-#hamburger
-{
-    display: none;
-    cursor: pointer;
-
-}
 
 /*main*/
 #prestationDasboard
@@ -87,7 +31,7 @@
     margin-top: 3%;
 
 }
-.vueEnsemble
+.compteur
 {
     background-color:  #f0e4e4;
     display: flex;
@@ -107,14 +51,7 @@
     
 }
 
-.para 
-{
-    display: flex;
-    border-spacing: 30px;
-    bottom: 0%;
 
-    
-}
 #tab
 {
     width: 100%;
@@ -122,6 +59,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 10%;
+    margin-bottom: 15px;
 }
 #tableau
 {
@@ -130,7 +68,6 @@
 .spaceTab
 {
     padding: 20px;
-   /*  width: 10% */;
 }
 
 #piedPage
@@ -149,7 +86,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15%;
 
 }
 .colorChamp

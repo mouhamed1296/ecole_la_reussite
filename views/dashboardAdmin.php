@@ -14,36 +14,25 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <link rel="stylesheet" href="css/dashboardAdmin.css">
-        
+        <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <!---->
-    <header>
-        
-        <div id="Entete">
-             <!-- <div><img src="images/logo.png" alt="logo" width=20%></div> -->
+        <!--<header>-->
+        <?php
+            include "header.php";
+        ?>
+
+
+<!-- <div><img src="images/logo.png" alt="logo" width=20%></div> -->
 
 <!--                     <div><a href="#" > <p class="nav_item">Ajouter Employés</p> </a></div>
                     <div><a href="#" > <p class="nav_item">Lister Employés</p> </a></div>
                     <div><a href="#" > <p class="nav_item">Ajouter ÉLéves </p> </a></div>
                     <div><a href="#" > <p class="nav_item">lister ÉLéves  </p> </a></div> -->
-
-
-                    <div class="nav_menu">  
-                        <img src="images/logo.png" alt="logo" id="logo" width=100>
-                            <ul class="acceuil">
-                                
-                                    <a href="" ><i class="fa-solid fa-house"></i> Acceuil</a>
-                                    <a href=""><i class="fa-solid fa-user"></i> Se Déconnecter</a>
-                                    
-                            </ul>
-                    </div>
-               
-        </div>
-
-    </header>
-    <!---->
+    <!--</header>-->
+        
+    
     <mian>
         <div id="prestationDasboard">
             <h3>Tableeu de bord Administrateur</h3>
@@ -51,9 +40,9 @@
         </div>
 
         <div id="dasboard">
-            <div class="vueEnsemble">  </div>  <div class="para">Employés</div>
-            <div class="vueEnsemble"></div>    <div class="para">Administrateur</div>     
-            <div class="vueEnsemble">  </div>  <div class="para">Élève</div>
+            <div class="compteur">  </div>  <div class="para">Employés</div>
+            <div class="compteur">  </div>   <div class="para">Administrateur</div>     
+            <div class="compteur">  </div>  <div class="para">Élève</div>
         </div>
 
         <div id="tab" >
@@ -98,15 +87,15 @@
         </div>
 
     </main>
-    <!---->
-    <footer>
 
-        <div id="piedPage">
-            <p>@2D2S 2022</p>
-        </div>
+     <!-- <footer>-->
     
-    </footer>
-    <!---->
+     <?php
+        include "footer.php";
+    ?>
+    
+
+    <!--</footer>-->
 
 
    
