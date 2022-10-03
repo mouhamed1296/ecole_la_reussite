@@ -19,9 +19,6 @@ abstract class Employe
         $this->salaire = $salaire;
         $this->statut = $statut;
     }
-
-    
-
     /**
      * Get the value of id_emp
      */ 
