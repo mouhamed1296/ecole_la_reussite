@@ -18,7 +18,7 @@
 <body>
 <header class="header">
    
-              <img src="images/logo.png" alt="logo" id="logo">
+    <img src="images/logo.png" alt="logo" id="logo">
         <ul class="acceuil">
             
                 <a href="" ><i class="fa-solid fa-house"></i> Acceuil</a>

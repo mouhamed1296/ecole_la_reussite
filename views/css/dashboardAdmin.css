@@ -2,14 +2,23 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    background: #f9f4f4
+}
+.acceuil{
+   
+    float: right;
+    gap: 95px;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-right: 0px;
+    font-size: 20px;
+    border: solid black;  
 }
 #Entete 
 {
     border: beige;
    background-color: beige;
-   
-
-
 }
 .nav_menu
 {
@@ -18,6 +27,7 @@
     margin: 10px;
     justify-content: center;
     align-items: center;
+     border: solid black;
     
 }
 /*enlever souligné et coleur lien*/
@@ -31,6 +41,11 @@
 .nav_menu a
 {
     text-decoration: none;
+    color: #5a3535;
+}
+.nav_menu a:hover
+{
+    color: #f0e4e4;
 }
 
 #btn_deconnect
@@ -44,19 +59,21 @@
 {
     display: none;
     cursor: pointer;
+
 }
 
 /*main*/
 #prestationDasboard
 {
-    background-color: #bbb;;
+    background-color:#f0e4e4;;
     width: 95%;
     height: 100px;
-    margin: 20px;
+    margin: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 1%;
+    padding: 10px;
 }
 #dasboard
 {
@@ -72,10 +89,11 @@
 }
 .vueEnsemble
 {
-    background-color: #bbb;
+    background-color:  #f0e4e4;
     display: flex;
     border-radius: 50%;
     padding: 70px;   
+    
 }
 
 #contenu
@@ -118,9 +136,13 @@
 #piedPage
 {
     width: 100%;
-    height: 80px;
-    background-color: beige;
-    border: solid black;
+
+    background-color: #dec3c3;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
 }
 #form
 {
@@ -129,4 +151,29 @@
     align-items: center;
     padding: 15%;
 
+}
+.colorChamp
+{
+    background-color: #f0e4e4;
+    padding: 15px;
+}
+.espaceChamp
+{
+    padding: 15px;  
+}
+.btnSaveEleve
+{
+    padding: 10px;
+    background-color:  #5a3535;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    text-transform: uppercase;
+
+}
+#btn
+{
+    display: flex;
+    justify-content: center;
+    
 }
