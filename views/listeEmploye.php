@@ -1,6 +1,6 @@
-<form>
+<form class= "search">
     <label><b>recherche</b></label>
-<input type="search" placeholder="recherche..." name="recherche">
+    <input type="search" placeholder="recherche..." name="recherche">
 </form> 
 
 <table>
