@@ -17,12 +17,11 @@
      // afficher le résultat 
      echo '<h3>Informations récupérées en utilisant POST</h3>'; 
      echo 'Nom : ' . $nom . "<br/>",' Prenom : ' . $prenom . "<br/>" ,' Email : ' . $mail. "<br/>", ' Niveau :' .$niveau. "<br/>", ' Tuteur: ' .$tuteur. "<br/>", 'Numéro Tuteur :' .$numTuteur. "<br/>", ' Date de Naissance : ' .$dateNaissance; 
-     exit;
 
 
      //insertion des donées dans base
-
-    $sql = "INSERT INTO eleve(nom, prenom, email, niveau, nom_tuteur, numero_tuteur, date_naiss) VALUES ('$nom', '$prenom', '$mail', '$niveau','$tuteur','$numTuteur', '$dateNaissance')";
+    $date_ins = date('d-m-y h:i:s');
+    $sql = "INSERT INTO eleve(nom, prenom, email, niveau, nom_tuteur, numero_tuteur, date_naiss, date_ins) VALUES ('$nom', '$prenom', '$mail', '$niveau','$tuteur','$numTuteur', '$dateNaissance', '$date_ins')";
     
     //execution de la requete
     $conn->exec($sql);
