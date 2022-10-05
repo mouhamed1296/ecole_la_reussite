@@ -3,6 +3,8 @@ RewriteEngine On
 RewriteRule acceuil views/index.php
 RewriteRule connexion views/connection.php
 RewriteRule admin views/dashboardAdmin.php
+RewriteRule eleve views/formEleve.php
 # rewrite css files to their actual path
 RewriteRule ^css/(.+.css)$ views/css/$1 [L,NC]
+RewriteRule ^js/(.+.js)$ views/js/$1 [L,NC]
 RewriteRule ^images/(.+.*)$ views/images/$1 [L,NC]
