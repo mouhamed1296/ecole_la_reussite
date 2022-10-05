@@ -1,3 +1,8 @@
+<form>
+    <label><b>recherche</b></label>
+<input type="search" placeholder="recherche..." name="recherche">
+</form> 
+
 <table>
         <tr>
             <th>Nom</th>
