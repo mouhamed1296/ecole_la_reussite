@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $erreur_email = null;
 $erreur_mdp = null;
 

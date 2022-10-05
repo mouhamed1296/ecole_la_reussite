@@ -52,12 +52,21 @@ if(isset($email) && isset($mdp)){
             exit;
         }
 
+        /*$sql =  "SELECT matricule from Employes";
+        $mat;
+        $res = $conn->query($sql);
+        if ($res->rowCount() > 0) {
+            $matricule = $res->fetchColumn();
+            $increment = (int) explode("/", $matricule)[1] + 1;
+            $mat = "MED/$increment";
+        }*/
+
         //vérification du statut de l'utilisateur
         if ($statut === "admin"){
             $_SESSION["nom"] = $user["nom"];
             $_SESSION["prenom"] = $user["prenom"];
             $_SESSION["email"] = $user["email"];
-            echo 'Bienvenue '.$_SESSION["prenom"].' '.$_SESSION["nom"];
+            Admin::seConnecter();
         }
     }
 }
