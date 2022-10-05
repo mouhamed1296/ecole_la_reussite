@@ -12,13 +12,13 @@ class EmployeRepo {
 
     public function selectAll()
     {
-        $eleves = [];
+        $employes = [];
         $sql = "SELECT * FROM employe";
         $reponse = $this->conn->query($sql);
         if ($reponse->rowCount() > 0) {
-            $eleves = $reponse->fetchAll();
+            $employes = $reponse->fetchAll();
         }
-        return $eleves;
+        return $employes;
     }
 
 }
