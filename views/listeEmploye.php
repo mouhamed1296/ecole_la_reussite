@@ -1,6 +1,7 @@
-<form class= "search">
-    <label><b>recherche</b></label>
-    <input type="search" placeholder="recherche..." name="recherche">
+
+<form class= "search" action="" method="GET">
+        <input type="search" name="recherche" placeholder="recherche..." name="recherche" required >
+         <input type="submit" value="recherche">
 </form> 
 
 <table>
@@ -17,7 +18,10 @@
               //récupération des employés
               require_once "../repositories/EmployeRepo.php";
               $employeRepo=new EmployeRepo();                 //creation d'une instance de EmployeRepo
-              $employes=$employeRepo->selectAll();            //appel de la méthode selectAll
+              $employes=$employeRepo->selectAll();  //appel de la méthode selectAll
+              if (isset($_GET["recherche"])){
+                 $employes = $employeRepo->recherche($_GET["recherche"]);
+              }       
             foreach($employes as $employe):?>
          
      <tr>
