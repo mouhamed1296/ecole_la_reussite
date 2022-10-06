@@ -6,62 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription Élève</title>
-
+    <link rel="stylesheet" href="./css/form.css">
     <link rel="stylesheet" href="css/dashboardAdmin.css">
 </head>
 
 <body>
-    <div id="form">
+    <div id="form_ajout">
+        <h1>Enregistrement eleve</h1>
         <form action="../controllers/traitementFormEleve.php" method="POST">
-            <table border=0>
-                <tr class="colorChamp">
-                    <th width=150 class="colorChamp">Identifiant</th>
-                    <th width=150 class="colorChamp">Description</th>
-
-                </tr>
-                <tr>
-                    <th class="colorChamp">Nom</th>
-                    <td align="center"><input type="text" name="nom" size="50" class="espaceChamp"></td>
-                </tr>
-
-                <!--   <p><?php echo "$nomerror" ?> </p> -->
-
-                <tr>
-                    <th class="colorChamp">Prénom</th>
-                    <td align="center"><input type="text" name="prenom" size="50" class="espaceChamp"></td>
-                </tr>
-
-                <tr>
-                    <th class="colorChamp">Email</th>
-                    <td align="center"><input type="text" name="mail" size="50" class="espaceChamp"></td>
-                </tr>
-                <tr>
-                    <th class="colorChamp">Niveau</th>
-                    <td align="center"><input type="text" name="niveau" size="50" class="espaceChamp"></td>
-                </tr>
-                <tr>
-                    <th class="colorChamp">Nom du Tuteur</th>
-                    <td align="center"><input type="text" name="tuteur" size="50" class="espaceChamp"></td>
-                </tr>
-                <tr>
-                    <th class="colorChamp">Numéro Tuteur</th>
-                    <td align="center"><input type="text" name="num_tuteur" size="50" class="espaceChamp"></td>
-                </tr>
-                <tr>
-                    <th class="colorChamp">Date de naissance</th>
-                    <td align="center"><input type="date" name="dateNaissance" size="50" class="espaceChamp"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" value="Enregistrer" class="btnSaveEleve" name="submit">
-                    </td>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom">
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prenom</label>
+                <input type="text" class="form-control" id="prenom" name="prenom">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="niveau">Niveau</label>
+                <select name="niveau" class="form-control" id="niveau">
+                    <option value="">CI</option>
+                    <option value="">CP</option>
+                    <option value="">CE1</option>
+                    <option value="">CE2</option>
+                    <option value="">CM1</option>
+                    <option value="">CM2</option>
+                    <option value="">6eme</option>
+                    <option value="">5eme</option>
+                    <option value="">4eme</option>
+                    <option value="">3eme</option>
+                    <option value="">seconde</option>
+                    <option value="">première</option>
+                    <option value="">terminale</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tuteur">Tuteur</label>
+                <input type="text" class="form-control" name="tuteur" id="tuteur">
+            </div>
+            <div class="form-group">
+                <label for="num_tuteur">Numero tuteur</label>
+                <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur">
+            </div>
+            <button type="submit" class="register" value="ajout_eleve">Enregistrer</button>
         </form>
     </div>
-
-
-    <script src="js/dashboardAdmin.js"></script>
 </body>
 
 </html>
