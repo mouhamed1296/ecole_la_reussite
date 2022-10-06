@@ -132,14 +132,13 @@
     align-items: center;
 
 } */
-/* #formEmp
+#formEmp
 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 10px;
-
-} */
+    margin-top: 10rem;
+} 
 /* .colorChamp
 {
     background-color: #f0e4e4;

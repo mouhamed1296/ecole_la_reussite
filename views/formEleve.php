@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <th class="colorChamp">Numéro Tuteur</th>
-                    <td align="center"><input type="text" name="num_tuteur" size="50" class="espaceChamp"></td>
+                    <td align="center"><input type="tel" name="num_tuteur" size="50" class="espaceChamp"></td>
                 </tr>
                 <tr>
                     <th class="colorChamp">Date de naissance</th>

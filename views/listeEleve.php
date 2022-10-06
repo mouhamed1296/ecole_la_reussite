@@ -1,3 +1,14 @@
+<link rel="stylesheet" href="css/listeEleve.css">
+
+
+
+
+<form class= "voir" action="" method="GET">
+        <input type="search" name="recherche" placeholder="recherche..." name="recherche" required >
+         <input type="submit" value="recherche">
+</form> 
+
+
 <table>
         <tr>
             <th>Nom</th>
