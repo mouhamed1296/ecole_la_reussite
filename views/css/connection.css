@@ -2,6 +2,9 @@ body{
     background: #f9f4f4;
 }
 #container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width:400px;
     margin:0 auto;
     margin-top:10%;

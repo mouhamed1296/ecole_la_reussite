@@ -9,6 +9,12 @@ if(isset($_POST["deconnecter"])) {
     <ul class="acceuil">
         <?php if (isset($_SESSION["email"])) : ?>
         <li>
+            <a href="/projet_gestion_ecole/acceuil">
+                <i class="fa-solid fa-list"></i>
+                <span class="menu-text"> Liste Eleve</span>
+            </a>
+        </li>
+        <li>
             <form action="" method="post">
                 <a href="/projet_gestion_ecole/connexion">
                     <button type="submit" name="deconnecter">
