@@ -8,8 +8,8 @@ body {
   background-color: white;
   height: auto;
 }
-header{
-  background-color: #f0e4e4;
+.header{
+  background-color: #dec3c3;
   position: fixed;
   top: 0;
   left: 0;

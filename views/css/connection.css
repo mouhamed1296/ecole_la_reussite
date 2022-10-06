@@ -45,3 +45,8 @@ input[type=submit]:hover {
    color: #5a3535;
     border: 1px solid #5a3535;
 }
+@media screen and (max-width: 375px){
+form{
+padding: 1rem ;    
+}    
+}
