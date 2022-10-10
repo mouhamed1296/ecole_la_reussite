@@ -35,10 +35,13 @@
         <td><?= $employe['email']?></td>
         <td><?= $employe['statut']?></td>
         <td><?= $employe['salaire']?></td>
-        <td><i class="fas fa-pen-to-square" style="color: royalblue;"></i>
-            <a id="myBtn" class="archive" href="#">
-                <i style="margin-left: .5rem;color:red;" class="fas fa-trash"></i>
+        <td>
+            <a href=<?="/projet_gestion_ecole/employe/ajout?edit_id=".$employe['id_emp']?>>
+                <i class="fas fa-pen-to-square" style="color: royalblue;"></i>
             </a>
+            <span id="myBtn" class="archive">
+                <i style="margin-left: .5rem;color:red;" class="fas fa-trash"></i>
+            </span>
             <!-- The Modal -->
             <div id="myModal" class="modal">
 

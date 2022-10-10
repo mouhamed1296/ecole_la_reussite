@@ -23,9 +23,9 @@ if(isset($_POST["deconnecter"])) {
         <li>
             <form action="" method="post">
                 <a href="/projet_gestion_ecole/connexion">
-                    <button type="submit" name="deconnecter">
+                    <button type="submit" name="deconnecter" style="padding: .5rem;">
                         <i class="fa-solid fa-user"></i>
-                        <span class="menu-text">Se deconnecter</span>
+                        <span class="menu-text" style="font-size: 1rem;">Se deconnecter</span>
                     </button>
                 </a>
             </form>

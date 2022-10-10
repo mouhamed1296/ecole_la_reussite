@@ -13,6 +13,18 @@
      $tuteur = $_POST['tuteur'];
      $numTuteur = (int) $_POST['num_tuteur'];
      $dateNaissance = $_POST['date_naiss']; 
+     if (empty($nom)){
+      header("location: ../eleve/ajout?erreur_vide_nom=Champ requis");
+      exit;
+     }
+     if (empty($prenom)){
+      header("location: ../eleve/ajout?erreur_vide_prenom=Champ requis");
+      exit;
+     }
+     if (empty($mail)){
+      header("location: ../eleve/ajout?erreur_vide_mail=Champ requis");
+      exit;
+     }
 
      $sql = "SELECT email FROM eleve WHERE email='$mail'";
      $res = $conn->query($sql);
@@ -26,10 +38,18 @@
      echo 'Nom : ' . $nom . "<br/>",' Prenom : ' . $prenom . "<br/>" ,' Email : ' . $mail. "<br/>", ' Niveau :' .$niveau. "<br/>", ' Tuteur: ' .$tuteur. "<br/>", 'Numéro Tuteur :' .$numTuteur. "<br/>", ' Date de Naissance : ' .$dateNaissance;
      */
 
-
+$sql =  "SELECT matricule from eleve";
+        $mat;
+        $res = $conn->query($sql);
+        if ($res->rowCount() > 0) {
+            $matricules = $res->fetchAll();
+            $matricule = $matricules[count($matricules) - 1]['matricule'];
+            $increment = (int) explode("/", $matricule)[1] + 1;
+            $mat = "MEL_2022/$increment";
+        }
      //insertion des donées dans la base
     $date_ins = date('y-m-d');
-    $sql = "INSERT INTO eleve(nom, prenom, email, niveau, nom_tuteur, numero_tuteur, date_naiss, date_ins) VALUES ('$nom', '$prenom', '$mail', '$niveau','$tuteur','$numTuteur', '$dateNaissance', '$date_ins')";
+    $sql = "INSERT INTO eleve(matricule, nom, prenom, email, niveau, nom_tuteur, numero_tuteur, date_naiss, date_ins) VALUES ('$mat','$nom', '$prenom', '$mail', '$niveau','$tuteur','$numTuteur', '$dateNaissance', '$date_ins')";
     
     //execution de la requete
     $conn->exec($sql);
@@ -39,20 +59,5 @@
       exit;
     }
  
-    }
-
-    // Vérifier s'il ya soumission avec le formulaire enregistrement des employés
-    if (isset($_POST['submit1'])) {
-    #Récuprétaion des information du formulaire
-    $nom1 = $_POST['nom1'];
-    $prenom1 = $_POST['prenom1'];
-    $mail1 = $_POST['mail1'];
-    $mdp = $_POST['mdp'];
-    $salaire  = $_POST['salaire'];
-    $statut = $_POST['statut'];
-
-    # affichage des données recupérer
-    echo ($nom1. "<br>" .$prenom1);
-
     }
 ?>

@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if(!isset($_SESSION['email'])) {
+    header("location: ../connexion");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,10 +47,22 @@
             <div class="form-group">
                 <label for="nom">Nom</label>
                 <input type="text" class="form-control" id="nom" name="nom">
+                <?php
+                    if(isset($_GET["erreur_vide_nom"])):
+                        $vide = $_GET["erreur_vide_nom"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $vide ?></span>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="prenom">Prenom</label>
                 <input type="text" class="form-control" id="prenom" name="prenom">
+                <?php
+                    if(isset($_GET["erreur_vide_prenom"])):
+                        $vide = $_GET["erreur_vide_prenom"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $vide ?></span>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -57,14 +74,40 @@
                 ?>
             <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $email ?></span>
             <?php endif; ?>
+            <?php
+                    if(isset($_GET["erreur_vide_mail"])):
+                        $vide = $_GET["erreur_vide_mail"];
+                ?>
+            <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $vide ?></span>
+            <?php endif; ?>
             <div class="form-group">
                 <label for="mdp">Mot de passe</label>
                 <input type="password" class="form-control" name="mdp" id="mdp">
+                <?php
+                    if(isset($_GET["erreur_vide_mdp"])):
+                        $vide = $_GET["erreur_vide_mdp"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $vide ?></span>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="salaire">Salaire</label>
                 <input type="number" class="form-control" id="salaire" name="salaire">
+                <?php
+                    if(isset($_GET["erreur_vide_salaire"])):
+                        $vide = $_GET["erreur_vide_salaire"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $vide ?></span>
+                <?php endif; ?>
             </div>
+            <?php
+            if (isset($_GET['edit_id'])):
+            ?>
+            <input type="hidden" name="id" value=<?=$_GET['edit_id']?> /> <input type="submit" name="modifier_employe"
+                class="register" value="Modifier">
+            <?php
+            else:
+            ?>
             <div class="form-group">
                 <label for="statut">Statut</label>
                 <select name="statut" class="form-control" id="statut">
@@ -83,6 +126,9 @@
                 </select>
             </div>
             <input type="submit" name="ajout_employe" class="register" value="Enregistrer">
+            <?php
+            endif;
+            ?>
         </form>
     </div>
 
