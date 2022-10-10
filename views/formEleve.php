@@ -8,12 +8,20 @@
     <title>Inscription Élève</title>
     <link rel="stylesheet" href="./css/form.css">
     <link rel="stylesheet" href="css/dashboardAdmin.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/form.css">
 </head>
 
 <body>
+    <!--<header>-->
+    <?php
+            include "header.php";
+        ?>
+    <!--</header>-->
     <div id="form_ajout">
         <h1>Enregistrement eleve</h1>
         <form action="../controllers/traitementFormEleve.php" method="POST">
+
             <div class="form-group">
                 <label for="nom">Nom</label>
                 <input type="text" class="form-control" id="nom" name="nom">
@@ -59,6 +67,11 @@
             <input type="submit" name="ajout_eleve" class="register" value="Enregistrer">
         </form>
     </div>
+    <!--<footer>-->
+    <?php
+            include "footer.php";
+        ?>
+    <!--</footerer>-->
 </body>
 
 </html>
