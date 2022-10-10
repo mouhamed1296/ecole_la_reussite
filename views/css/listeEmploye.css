@@ -8,17 +8,20 @@ table{
     border-collapse: collapse;
     min-width: 400px;
     width: auto;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 15);
+    /*box-shadow: 0 5px 5px rgba(0, 0, 0, 15);*/
     cursor: pointer;
-    margin: 100px auto;
-    border: 1px solid ;
+    margin: 2rem auto;
+    border: 1px solid #dec3c3;
 }
 th{
     background-color: #dec3c3;
     text-align: left;
     color: black;
-    padding: 5px;
+    padding: 0.8rem;
     border: 1px solid #ddd;
+}
+td {
+    padding: 0.5rem;
 }
 th :nth-child(even){
     background-color: #f3f3f3;
@@ -26,4 +29,25 @@ th :nth-child(even){
 .search{
     display: flex;
     justify-content: center;
+    gap: 1rem;
+}
+
+#search_emp_input {
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: 2px solid #ddd;
+}
+
+#search_emp_input:focus {
+    outline: 0;
+    border: 2px solid #dec3c3;
+}
+
+#search_emp_button {
+    padding: .5rem;
+    background-color: #dec3c3;
+    border: 0;
+    outline: 0;
+    border-radius: 3px;
 }

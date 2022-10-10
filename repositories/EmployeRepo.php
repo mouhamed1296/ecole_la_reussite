@@ -24,7 +24,7 @@ class EmployeRepo {
     public function recherche(string $recherche)
     {
      $employes = [];
-     $sql = "SELECT * FROM employe where nom like %$recherche% or prenom like  %$recherche%  or email like %$recherche% or statut like %$recherche% ORDER BY id_emp DESC" ;
+     $sql = "SELECT * FROM employe where nom like '%$recherche%' or prenom like  '%$recherche%'  or email like '%$recherche%' or statut like '%$recherche%' ORDER BY id_emp DESC" ;
         $reponse = $this->conn->query($sql);
         if ($reponse->rowCount() > 0) {
             $employes = $reponse->fetchAll();

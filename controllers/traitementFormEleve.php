@@ -2,21 +2,22 @@
     //inclusion fichier connexion
     $conn = require_once('../config/db.php');
    // Vérifier s'il ya soumission avec le formulaire inscription des éleves
-   if ( isset( $_POST['submit'] ) ) {
+   if (isset($_POST['ajout_eleve'])) {
      /* récupérer les données du formulaire en utilisant 
         la valeur des attributs name comme clé 
        */
      $nom = $_POST['nom']; 
      $prenom = $_POST['prenom']; 
-     $mail = $_POST['mail'];
+     $mail = $_POST['email'];
      $niveau = $_POST['niveau']; 
      $tuteur = $_POST['tuteur'];
      $numTuteur = (int) $_POST['num_tuteur'];
-     $dateNaissance = $_POST['dateNaissance']; 
+     $dateNaissance = $_POST['date_naiss']; 
      
      // afficher le résultat 
-     echo '<h3>Informations récupérées en utilisant POST</h3>'; 
-     echo 'Nom : ' . $nom . "<br/>",' Prenom : ' . $prenom . "<br/>" ,' Email : ' . $mail. "<br/>", ' Niveau :' .$niveau. "<br/>", ' Tuteur: ' .$tuteur. "<br/>", 'Numéro Tuteur :' .$numTuteur. "<br/>", ' Date de Naissance : ' .$dateNaissance; 
+     /*echo '<h3>Informations récupérées en utilisant POST</h3>'; 
+     echo 'Nom : ' . $nom . "<br/>",' Prenom : ' . $prenom . "<br/>" ,' Email : ' . $mail. "<br/>", ' Niveau :' .$niveau. "<br/>", ' Tuteur: ' .$tuteur. "<br/>", 'Numéro Tuteur :' .$numTuteur. "<br/>", ' Date de Naissance : ' .$dateNaissance;
+     */
 
 
      //insertion des donées dans la base
@@ -25,6 +26,10 @@
     
     //execution de la requete
     $conn->exec($sql);
+
+    if ($conn->lastInsertId()) {
+      header("location: ../eleve/ajout?success='élève enregitré avec succés'");
+    }
  
     }
 
