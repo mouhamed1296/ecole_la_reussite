@@ -21,6 +21,7 @@
             include "header.php";
         ?>
     <!--</header>-->
+    
     <!-- <mian> -->
     <div id="form_ajout">
         <h1>Enregistrement employe</h1>
