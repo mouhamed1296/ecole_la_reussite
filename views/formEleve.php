@@ -15,11 +15,13 @@
 <body>
      <!--<header>-->
      <?php
-            include "header.php";
-        ?>
+        include "header.php";
+    ?>
     <!--</header>-->
+
+<!-- <mian> -->
 <div id="form_ajout">
-        <h1>Enregistrement eleve</h1>
+        <h1>Enregistrement élève</h1>
         <form action="../controllers/traitementFormEleve.php" method="POST">
 
             <div class="form-group">
@@ -65,10 +67,11 @@
 
         </form>
     </div>
+<!-- <mian/> -->
     <!--<footer>-->
     <?php
-            include "footer.php";
-        ?>
+        include "footer.php";
+    ?>
     <!--</footerer>-->
 </body>
 

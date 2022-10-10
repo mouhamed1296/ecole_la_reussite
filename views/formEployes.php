@@ -21,6 +21,7 @@
             include "header.php";
         ?>
     <!--</header>-->
+    <!-- <mian> -->
     <div id="form_ajout">
         <h1>Enregistrement employe</h1>
         <form action="../controllers/traitementFormEleve.php" method="POST">
@@ -56,6 +57,7 @@
             <button type="submit" class="register" value="ajout_employe">Enregistrer</button>
         </form>
     </div>
+    <!-- <mian/> -->
 
     <!--<footer>-->
     <?php
