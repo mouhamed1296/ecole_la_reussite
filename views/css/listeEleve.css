@@ -23,3 +23,10 @@ th{
     padding: 5px;
     border: 1px solid #ddd;
 }
+.voir{
+ display:flex;  
+ align-items:center; 
+ justify-content:center; 
+ margin:rem 0;
+     
+}

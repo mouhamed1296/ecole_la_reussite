@@ -28,7 +28,7 @@ include_once "header.php";
     <div id="container">
         <!-- zone de connexion -->
 
-        <form action="controllers/login.php" method="POST">
+        <form action="../controllers/login.php" method="POST">
             <h1>Connexion</h1>
             <label><b>Email</b></label>
             <input type="text" placeholder="Entrer l'adresse email" name="email" required>
