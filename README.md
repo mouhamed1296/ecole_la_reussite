@@ -34,6 +34,8 @@ Et maintenant vous pouvez exécuter la commande de push citer plus haut.
 
 Aprés cela le membre doit se connecter sur son compte github et créer un pull request de sa branche vers la branche dev et le Lead du projet fera un code review avant de faire le merge.
 
+### Description du projet et ses fonctionnalités
+
 C'est une application des gestion d'une école mixte primaire et secondaire permettant de digitaliser la gestion administrative en ce qui concerne :
 
     Inscription des élèves
