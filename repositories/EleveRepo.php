@@ -13,21 +13,40 @@ class EleveRepo {
     public function selectAll()
     {
         $eleves = [];
-        $sql = "SELECT * FROM eleve";
+        $sql = "SELECT * FROM eleve WHERE archive=0";
         $reponse = $this->conn->query($sql);
         if ($reponse->rowCount() > 0) {
             $eleves = $reponse->fetchAll();
         }
         return $eleves;
     }
+
+    public function selectAllArchive()
+    {
+        $eleves = [];
+        $sql = "SELECT * FROM eleve WHERE archive=1";
+        $reponse = $this->conn->query($sql);
+        if ($reponse->rowCount() > 0) {
+            $eleves = $reponse->fetchAll();
+        }
+        return $eleves;
+    }
+    
     public function recherche(string $recherche)
     {
     $eleves = [];
-    $sql = "SELECT * FROM eleve where nom like %$recherche% or prenom like  %$recherche%  or niveau like %$recherche% ORDER BY id_eleve DESC" ;
+    $sql = "SELECT * FROM eleve where nom like '%$recherche%' or prenom like  '%$recherche%'  or niveau like '%$recherche%' ORDER BY id_eleve DESC" ;
        $reponse = $this->conn->query($sql);
        if ($reponse->rowCount() > 0) {
            $eleves = $reponse->fetchAll();
        }
        return $eleves;
+   }
+
+   public function archiver(int $idEleve)
+   {
+        $dateArchivage = date('y-m-d');
+        $sql="UPDATE eleve SET archive=1, date_archivage='$dateArchivage' WHERE id_eleve=$idEleve";
+        $this->conn->exec($sql);
    }
 }

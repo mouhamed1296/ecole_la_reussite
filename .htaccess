@@ -4,11 +4,13 @@ RewriteRule acceuil views/index.php
 RewriteRule connexion views/connection.php
 RewriteRule admin views/dashboardAdmin.php
 RewriteRule eleve/ajout views/formEleve.php
+RewriteRule eleve/liste views/listeEleve.php
 RewriteRule employe/ajout views/formEployes.php
 RewriteRule employe/edit views/modifierEmployes.php
 # rewrite css files to their actual path
 RewriteRule ^css/(.+.css)$ views/css/$1 [L,NC]
 RewriteRule ^(.*)/css/(.+.css)$ views/css/$2 [L,NC]
 RewriteRule ^js/(.+.js)$ views/js/$1 [L,NC]
+RewriteRule ^(.*)/js/(.+.js)$ views/js/$2 [L,NC]
 RewriteRule ^images/(.+.*)$ views/images/$1 [L,NC]
 RewriteRule ^(.*)/images/(.+.*)$ views/images/$2 [L,NC]

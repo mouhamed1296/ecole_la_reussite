@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription Élève</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./css/form.css">
     <link rel="stylesheet" href="css/dashboardAdmin.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -15,11 +22,19 @@
 <body>
     <!--<header>-->
     <?php
-            include "header.php";
-        ?>
+        include "header.php";
+    ?>
     <!--</header>-->
     <div id="form_ajout">
         <h1>Enregistrement eleve</h1>
+        <?php
+            if (isset($_GET["success"])):
+                $message = $_GET["success"];
+         ?>
+        <span style="padding: 1rem;background-color: lightgreen; color: darkgreen;margin: 1rem;">
+            <?= $message ?>
+        </span>
+        <?php endif; ?>
         <form action="../controllers/traitementFormEleve.php" method="POST">
 
             <div class="form-group">
@@ -37,6 +52,12 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email">
+                <?php
+                    if(isset($_GET["erreur_email"])):
+                        $email = $_GET["erreur_email"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $email ?></span>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="niveau">Niveau</label>

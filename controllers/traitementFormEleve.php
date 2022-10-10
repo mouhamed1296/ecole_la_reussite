@@ -13,6 +13,13 @@
      $tuteur = $_POST['tuteur'];
      $numTuteur = (int) $_POST['num_tuteur'];
      $dateNaissance = $_POST['date_naiss']; 
+
+     $sql = "SELECT email FROM eleve WHERE email='$mail'";
+     $res = $conn->query($sql);
+     if ($res->rowCount() > 0){
+      header("location: ../eleve/ajout?erreur_email=addresse email déja pris");
+      exit;
+     }
      
      // afficher le résultat 
      /*echo '<h3>Informations récupérées en utilisant POST</h3>'; 
@@ -21,14 +28,15 @@
 
 
      //insertion des donées dans la base
-    $date_ins = date('d-m-y h:i:s');
+    $date_ins = date('y-m-d');
     $sql = "INSERT INTO eleve(nom, prenom, email, niveau, nom_tuteur, numero_tuteur, date_naiss, date_ins) VALUES ('$nom', '$prenom', '$mail', '$niveau','$tuteur','$numTuteur', '$dateNaissance', '$date_ins')";
     
     //execution de la requete
     $conn->exec($sql);
 
     if ($conn->lastInsertId()) {
-      header("location: ../eleve/ajout?success='élève enregitré avec succés'");
+      header("location: ../eleve/ajout?success=élève enregitré avec succés");
+      exit;
     }
  
     }

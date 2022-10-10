@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(isset($_POST["deconnecter"])) {
     session_destroy();
     header("location: connexion");
@@ -9,7 +9,13 @@ if(isset($_POST["deconnecter"])) {
     <ul class="acceuil">
         <?php if (isset($_SESSION["email"])) : ?>
         <li>
-            <a href="/projet_gestion_ecole/acceuil">
+            <a href="/projet_gestion_ecole/admin">
+                <i class="fa-solid fa-gauge"></i>
+                <span class="menu-text">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="/projet_gestion_ecole/eleve/liste">
                 <i class="fa-solid fa-list"></i>
                 <span class="menu-text"> Liste Eleve</span>
             </a>
