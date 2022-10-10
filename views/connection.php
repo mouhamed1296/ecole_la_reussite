@@ -3,6 +3,10 @@ session_start();
 
 $erreur_email = null;
 $erreur_mdp = null;
+if(isset($_SESSION['email'])) {
+    header("location: admin");
+    exit;
+}
 
 if (isset($_GET["erreur_email"])) {
     $erreur_email = $_GET["erreur_email"];

@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php session_start();
+if(!isset($_SESSION['email'])) {
+    header("location: ../connexion");
+    exit;
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +83,9 @@
                 <td><?= $eleve['numero_tuteur'] ?></td>
                 <td><?= $eleve['date_naiss'] ?></td>
                 <td><?= $eleve['date_ins'] ?></td>
-                <td><i class="fas fa-pen-to-square" style="color: royalblue;"></i>
+                <td><a href=<?="/projet_gestion_ecole/eleve/ajout?edit_id=".$eleve['id_eleve']?>>
+                        <i class="fas fa-pen-to-square" style="color: royalblue;"></i>
+                    </a>
                     <a id="myBtn" class="archive" href="#">
                         <i style="margin-left: .5rem;color:red;" class="fas fa-trash"></i>
                     </a>
