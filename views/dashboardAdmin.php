@@ -16,13 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script defer src="js/archive.js"></script>
 
     <link rel="stylesheet" href="css/dashboardAdmin.css">
     <link rel="stylesheet" href="css/index.css">
@@ -62,16 +59,18 @@
         </div>
 
         <div id="tab">
-            <div class="total">
-                <div class="nbrTotal"></div>
-                <span>Élève</span>
-            </div>
-            <div class="total">
-                <div class="nbrTotal"></div>
-                <span>Employés</span>
-            </div>
-
-
+            <a href="eleve/ajout">
+                <div class="total">
+                    <div class="nbrTotal"></div>
+                    <span>Élève</span>
+                </div>
+            </a>
+            <a href="employe/ajout">
+                <div class="total">
+                    <div class="nbrTotal"></div>
+                    <span>Employés</span>
+                </div>
+            </a>
         </div>
         <div id="emplist">
             <?php

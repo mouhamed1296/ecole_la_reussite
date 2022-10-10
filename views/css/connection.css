@@ -6,8 +6,8 @@ body{
     align-items: center;
     justify-content: center;
     width:400px;
-    margin:0 auto;
-    margin-top:10%;
+    margin:10rem auto;
+    padding: 0 1rem;
 }
 /* bordure form */
 form {
