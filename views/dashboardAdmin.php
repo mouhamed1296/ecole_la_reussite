@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(!isset($_SESSION['email'])) {
+        header("location: connexion");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +22,7 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   
+
 
     <link rel="stylesheet" href="css/dashboardAdmin.css">
     <link rel="stylesheet" href="css/index.css">
@@ -58,21 +62,21 @@
         </div>
 
         <div id="tab">
-            <div class="total"> 
-            <div class="nbrTotal"></div>
-            <span>Élève</span>
+            <div class="total">
+                <div class="nbrTotal"></div>
+                <span>Élève</span>
             </div>
-            <div class="total"> 
-            <div class="nbrTotal"></div>
-            <span>Employés</span>
+            <div class="total">
+                <div class="nbrTotal"></div>
+                <span>Employés</span>
             </div>
 
-          
+
         </div>
-         <div id="emplist">
+        <div id="emplist">
             <?php
             include_once "listeEmploye.php";
-            ?>       
+            ?>
         </div>
         </main>
 

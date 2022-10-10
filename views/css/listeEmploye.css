@@ -23,7 +23,8 @@ th{
 th :nth-child(even){
     background-color: #f3f3f3;
 }
-.voir{
+.search{
     display: flex;
     justify-content: center;
 }
+
