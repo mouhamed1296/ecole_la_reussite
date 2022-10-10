@@ -1,9 +1,4 @@
-<?php session_start(); 
-if(!isset($_SESSION['email'])) {
-    header("location: ../connexion");
-    exit;
-}
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
