@@ -52,6 +52,8 @@ if(isset($email) && isset($mdp)){
             exit;
         }
 
+
+
         //vérification du statut de l'utilisateur
         if ($statut === "admin"){
             $_SESSION["nom"] = $user["nom"];
@@ -60,5 +62,13 @@ if(isset($email) && isset($mdp)){
             Admin::seConnecter();
         }
     }
-    
+  //verification email et mdp
+  else{
+    $erreur["invalidEmail"] = "Veuillez saisir un email correct";
+    $erreur["invalidMdp"] = "mot de passe incorrect";
+    header("location: ../connexion?erreur_email=".$erreur["invalidEmail"]."&erreur_mdp=".$erreur["invalidMdp"]);
+    exit;
+  
+}
+
 }
