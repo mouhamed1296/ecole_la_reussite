@@ -24,7 +24,6 @@ if(!isset($_SESSION['email'])) {
 </head>
 
 <body>
-
     <!--<header>-->
     <?php
                          include "header.php";
@@ -45,14 +44,15 @@ if(!isset($_SESSION['email'])) {
 
         <table>
             <tr>
+                <th>Matricule</th>
                 <th>Nom</th>
                 <th>Prenom</th>
-                <th>email</th>
-                <th>niveau</th>
-                <th>nom_tuteur</th>
-                <th>numero_tuteur</th>
-                <th>date_naiss</th>
-                <th>date_ins</th>
+                <th>Email</th>
+                <th>Niveau</th>
+                <th>Nom_tuteur</th>
+                <th>Numero_tuteur</th>
+                <th>Date_naiss</th>
+                <th>Date_ins</th>
                 <th>Actions</th>
             </tr>
 
@@ -75,6 +75,7 @@ if(!isset($_SESSION['email'])) {
             ?>
 
             <tr>
+                <td><?= $eleve['matricule']?></td>
                 <td><?= $eleve['nom'] ?></td>
                 <td><?= $eleve['prenom'] ?></td>
                 <td><?= $eleve['email'] ?></td>

@@ -5,6 +5,7 @@
 
 <table>
     <tr>
+        <th>Matricule</th>
         <th>Nom</th>
         <th>Prenom</th>
         <th>Email</th>
@@ -30,6 +31,7 @@
 ?>
 
     <tr>
+        <td><?= $employe['matricule']?></td>
         <td><?= $employe['nom']?></td>
         <td><?= $employe['prenom']?></td>
         <td><?= $employe['email']?></td>
