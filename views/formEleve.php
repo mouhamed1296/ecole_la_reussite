@@ -90,7 +90,18 @@ if(!isset($_SESSION['email'])) {
                 <label for="num_tuteur">Numero tuteur</label>
                 <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur">
             </div>
+            <?php
+            if (isset($_GET['edit_id'])):?>
+            
+            <input type="hidden" name="id" value=<?=$_GET['edit_id']?> /> <input type="submit" name="modifier_eleve"
+                class="register" value="Modifier">
+                <?php
+            else:
+            ?>
             <input type="submit" name="ajout_eleve" class="register" value="Enregistrer">
+            <?php
+            endif;
+            ?>
         </form>
     </div>
     <!--<footer>-->
@@ -98,6 +109,7 @@ if(!isset($_SESSION['email'])) {
             include "footer.php";
         ?>
     <!--</footerer>-->
+ 
 </body>
 
 </html>
