@@ -59,12 +59,12 @@ class EmployeRepo {
    }
 
    public function count(){
-    $comptEleve = "SELECT COUNT(*) FROM employe";
+    $comptEleve = "SELECT COUNT(*) FROM employe WHERE archive=0";
     $res = $this->conn->query($comptEleve);
     return $res->fetchColumn();
    }
    public function countEleve(){
-    $compteEleve ="SELECT COUNT(*) FROM eleve";
+    $compteEleve ="SELECT COUNT(*) FROM eleve WHERE archive=0";
     $res = $this->conn->query($compteEleve);
     return $res->fetchColumn();
    }

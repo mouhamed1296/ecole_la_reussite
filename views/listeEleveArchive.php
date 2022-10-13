@@ -42,10 +42,6 @@ if(!isset($_SESSION['email'])) {
 
         </form>
 
-        <a href="/projet_getion_ecole/eleve/listeArchive"
-            style="padding: 1rem;background-color: lightgrey;text-decoration: none;color: darkgrey;">Liste eleve
-            archivé</a>
-
         <table>
             <tr>
                 <th>Matricule</th>
@@ -69,7 +65,7 @@ if(!isset($_SESSION['email'])) {
                         $id_elv = (int) $_GET['id'];
                         $eleveRepo->archiver($id_elv);
                 }                      //creation d'une instance de EleveRepo
-                $eleves = $eleveRepo->selectAll();     //appel de la méthode selectAll
+                $eleves = $eleveRepo->selectAllArchive();     //appel de la méthode selectAll
                 if (isset($_GET["recherche"])){
                         $eleves = $eleveRepo->recherche($_GET["recherche"]);
                         }   
@@ -91,8 +87,9 @@ if(!isset($_SESSION['email'])) {
                 <td><a href=<?="/projet_gestion_ecole/eleve/ajout?edit_id=".$eleve['id_eleve']?>>
                         <i class="fas fa-pen-to-square" style="color: royalblue;"></i>
                     </a>
-                    <span id="myBtn" data-id=<?= $eleve['id_eleve'] ?> class="archive">
-                        <i style="margin-left: .5rem;color:red;" class="fas fa-trash"></i>
+                    <span id="myBtn" data-id=<?= $eleve['id_eleve'] ?> class="archive"
+                        style="display: flex;padding: 1rem;background-color: lightgrey;">
+                        désarchiver
                     </span>
                     <!-- The Modal -->
                     <div id="popup">
@@ -102,10 +99,10 @@ if(!isset($_SESSION['email'])) {
                             <div class="modal-content">
                                 <span class="close">&times;</span>
                                 <div style="display: flex;flex-direction: column;gap: 1rem;">
-                                    <p style="font-size: 2rem;">Voulez vous vraiment supprimer cet eleve</p>
-                                    <form action="/projet_gestion_ecole/eleve/liste" method="get">
+                                    <p style="font-size: 2rem;">Voulez vous vraiment désarchiver cet eleve</p>
+                                    <form action="/projet_gestion_ecole/eleve/listeArchive" method="get">
                                         <input type="hidden" class="supprimer" name="id">
-                                        <input type="submit" value="Supprimer">
+                                        <input type="submit" value="désarchiver">
                                     </form>
                                 </div>
                             </div>
