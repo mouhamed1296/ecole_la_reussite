@@ -63,16 +63,12 @@ $req->execute(array(
        'numero_tuteur' => $numero_tuteur,
        'date_naissance' => $date_naissance,
        )
-       //on récupere l'informationde l'élève
-      
-
-
     
     );
 
 
    }
-
+//on récupere l'informationde l'élève
    public function selectOne($id){
     $eleve = null;
     $res = $this->conn->query("SELECT * FROM eleve WHERE id_eleve=$id");

@@ -23,13 +23,13 @@ class EmployeRepo {
     }
     public function selectAllArchive()
     {
-        $eleves = [];
+        $employes = [];
         $sql = "SELECT * FROM employe WHERE archive=1";
         $reponse = $this->conn->query($sql);
         if ($reponse->rowCount() > 0) {
             $eleves = $reponse->fetchAll();
         }
-        return $eleves;
+        return $employes;
     }
     public function recherche(string $recherche)
     {
@@ -46,5 +46,15 @@ class EmployeRepo {
         $dateArchivage = date('y-m-d');
         $sql="UPDATE employe SET archive=1, date_archivage='$dateArchivage' WHERE id_emp=$idEmploye";
         $this->conn->exec($sql);
+   }
+   //on récupere l'informationde l'élève
+   public function selectOne($id_emp){
+    $employe = null;
+    $res = $this->conn->query("SELECT * FROM employe WHERE id_emp=$id_emp");
+    //$res = $req->execute(['id_eleve' => $id]);
+    if ($res->rowCount() > 0) {
+        $employe = $res->fetchAll()[0];
+    }
+    return $employe;
    }
 }
