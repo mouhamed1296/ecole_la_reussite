@@ -62,8 +62,24 @@ $req->execute(array(
        'tuteur' => $tuteur,
        'numero_tuteur' => $numero_tuteur,
        'date_naissance' => $date_naissance,
-       ));
+       )
+       //on récupere l'informationde l'élève
+      
 
 
+    
+    );
+
+
+   }
+
+   public function selectOne($id){
+    $eleve = null;
+    $res = $this->conn->query("SELECT * FROM eleve WHERE id_eleve=$id");
+    //$res = $req->execute(['id_eleve' => $id]);
+    if ($res->rowCount() > 0) {
+        $eleve = $res->fetchAll()[0];
+    }
+    return $eleve;
    }
 }

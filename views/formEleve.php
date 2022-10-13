@@ -1,8 +1,12 @@
-<?php session_start(); 
+<?php session_start();
+include_once "../repositories/EleveRepo.php"; 
 if(!isset($_SESSION['email'])) {
     header("location: ../connexion");
     exit;
 }
+if (isset($_GET['edit_id'])) $id = (int) $_GET['edit_id'];
+$eleveRepo = new EleveRepo();
+$eleve = $eleveRepo->selectOne($id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,24 +48,24 @@ if(!isset($_SESSION['email'])) {
 
             <div class="form-group">
                 <label for="nom">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom">
+                <input type="text" class="form-control" id="nom" name="nom" value=<?=$eleve['nom']; ?>>
             </div>
             <div class="form-group">
                 <label for="prenom">Prenom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom">
+                <input type="text" class="form-control" id="prenom" name="prenom" value=<?=$eleve['prenom']; ?>>
             </div>
             <div class="form-group">
                 <label for="date_naiss">Date naissance</label>
-                <input type="date" class="form-control" id="date_naiss" name="date_naiss">
+                <input type="date" class="form-control" id="date_naiss" name="date_naiss" value=<?=$eleve['date_naiss']; ?>>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email" value=<?=$eleve['email']; ?>>
                 <?php
                     if(isset($_GET["erreur_email"])):
                         $email = $_GET["erreur_email"];
                 ?>
-                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $email ?></span>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"></span>
                 <?php endif; ?>
             </div>
             <div class="form-group">
@@ -84,11 +88,11 @@ if(!isset($_SESSION['email'])) {
             </div>
             <div class="form-group">
                 <label for="tuteur">Tuteur</label>
-                <input type="text" class="form-control" name="tuteur" id="tuteur">
+                <input type="text" class="form-control" name="tuteur" id="tuteur" value=<?=$eleve['nom_tuteur']; ?>>
             </div>
             <div class="form-group">
                 <label for="num_tuteur">Numero tuteur</label>
-                <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur">
+                <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur" value=<?=$eleve['numero_tuteur']; ?>>
             </div>
             <?php
             if (isset($_GET['edit_id'])):?>
@@ -98,7 +102,7 @@ if(!isset($_SESSION['email'])) {
                 <?php
             else:
             ?>
-            <input type="submit" name="ajout_eleve" class="register" value="Enregistrer">
+            <input type="submit" name="ajout_eleve" class="register" value="Enregistrer" value=">
             <?php
             endif;
             ?>
