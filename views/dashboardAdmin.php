@@ -1,9 +1,11 @@
 <?php
     session_start();
-    if(!isset($_SESSION['email'])) {
+    if(!isset($_SESSION['email']) && !isset($_SESSION['mdp'])) {
         header("location: ../connexion");
         exit;
     }
+
+    $conn = require_once('../config/db.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,8 +47,8 @@
 
     <!--<header>-->
     <?php
-            include "header.php";
-        ?>
+        include "header.php";
+    ?>
     <!--</header>-->
 
 </div>
@@ -61,13 +63,28 @@
         <div id="tab">
             <a href="eleve/ajout">
                 <div class="total">
-                    <div class="nbrTotal"></div>
+                    <div class="nbrTotal">
+                        <!-- Compter les élèves. -->
+                        <?php
+                            $comptEleve = "SELECT COUNT(*) FROM eleve";
+                            $res = $conn->query($comptEleve);
+                            /* $resultat = $conn->query($comptEleve ) or die ("La requête SQL a échoué !"); */
+                
+                        ?>
+                    </div>
                     <span>Élève</span>
                 </div>
             </a>
             <a href="employe/ajout">
                 <div class="total">
-                    <div class="nbrTotal"></div>
+                    <div class="nbrTotal">
+                            <!-- Compter les employe. -->
+                        <?php
+                            $comptEmploye = "SELECT COUNT(*) FROM eleve";
+                            $res = $conn->query($comptEmploye);
+                            /* $resultat = $conn->query($comptEmploye) or die ("La requête SQL a échoué !"); */
+                        ?>
+                    </div>
                     <span>Employés</span>
                 </div>
             </a>
