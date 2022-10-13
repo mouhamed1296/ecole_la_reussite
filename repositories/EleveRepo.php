@@ -63,10 +63,6 @@ $req->execute(array(
        'numero_tuteur' => $numero_tuteur,
        'date_naissance' => $date_naissance,
        )
-       //on récupere l'informationde l'élève
-      
-
-
     
     );
 
