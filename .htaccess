@@ -5,6 +5,7 @@ RewriteRule connexion views/connection.php
 RewriteRule admin views/dashboardAdmin.php
 RewriteRule eleve/ajout views/formEleve.php
 RewriteRule eleve/liste views/listeEleve.php
+RewriteRule eleve/listeArchive views/listeEleveArchive.php
 RewriteRule employe/ajout views/formEployes.php
 RewriteRule employe/edit views/modifierEmploye.php
 # rewrite css files to their actual path

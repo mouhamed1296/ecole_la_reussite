@@ -3,6 +3,11 @@
     <input id="search_emp_button" type="submit" value="recherche">
 </form>
 
+<a href="/projet_gestion_ecole/views/listeEmployeArchive.php"
+    style="margin-left: 30rem;padding: 1rem;background-color: lightgrey;text-decoration: none;color: black;">Liste
+    eleve
+    archivé</a>
+
 <table>
     <tr>
         <th>Matricule</th>

@@ -51,11 +51,23 @@ $eleve = $eleveRepo->selectOne($id);
             <div class="form-group">
                 <label for="nom">Nom</label>
                 <input type="text" class="form-control" id="nom" name="nom" value=<?=$eleve['nom'] ?? null; ?>>
+                <?php
+                    if(isset($_GET["erreur_vide_nom"])):
+                        $nom = $_GET["erreur_vide_nom"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $nom ?></span>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="prenom">Prenom</label>
                 <input type="text" class="form-control" id="prenom" name="prenom"
                     value=<?=$eleve['prenom'] ?? null ; ?>>
+                <?php
+                    if(isset($_GET["erreur_vide_prenom"])):
+                        $prenom = $_GET["erreur_vide_prenom"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $prenom ?></span>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="date_naiss">Date naissance</label>
@@ -98,11 +110,23 @@ $eleve = $eleveRepo->selectOne($id);
                 <label for="tuteur">Tuteur</label>
                 <input type="text" class="form-control" name="tuteur" id="tuteur"
                     value=<?=$eleve['nom_tuteur'] ?? null; ?>>
+                <?php
+                    if(isset($_GET["erreur_vide_tuteur"])):
+                        $tuteur = $_GET["erreur_vide_tuteur"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $tuteur ?></span>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="num_tuteur">Numero tuteur</label>
                 <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur"
                     value=<?=$eleve['numero_tuteur'] ?? null; ?>>
+                <?php
+                    if(isset($_GET["erreur_vide_num_tuteur"])):
+                        $num_tuteur = $_GET["erreur_vide_num_tuteur"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $num_tuteur ?></span>
+                <?php endif; ?>
             </div>
             <?php
             if (isset($_GET['edit_id'])):?>
