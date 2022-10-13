@@ -54,11 +54,13 @@ $eleve = $eleveRepo->selectOne($id);
             </div>
             <div class="form-group">
                 <label for="prenom">Prenom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" value=<?=$eleve['prenom'] ?? null ; ?>>
+                <input type="text" class="form-control" id="prenom" name="prenom"
+                    value=<?=$eleve['prenom'] ?? null ; ?>>
             </div>
             <div class="form-group">
                 <label for="date_naiss">Date naissance</label>
-                <input type="date" class="form-control" id="date_naiss" name="date_naiss" value=<?=$eleve['date_naiss'] ?? null; ?>>
+                <input type="date" class="form-control" id="date_naiss" name="date_naiss"
+                    value=<?=$eleve['date_naiss'] ?? null; ?>>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -67,13 +69,19 @@ $eleve = $eleveRepo->selectOne($id);
                     if(isset($_GET["erreur_email"])):
                         $email = $_GET["erreur_email"];
                 ?>
-                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"></span>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $email ?></span>
+                <?php endif; ?>
+                <?php
+                    if(isset($_GET["erreur_invalid_email"])):
+                        $emailInvalid = $_GET["erreur_invalid_email"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $emailInvalid ?></span>
                 <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="niveau">Niveau</label>
-                <select name="niveau" class="form-control" id="niveau" >
-                <option value=<?=$eleve['niveau'] ?? null; ?> selected><?=$eleve['niveau'] ?? null; ?></option>
+                <select name="niveau" class="form-control" id="niveau">
+                    <option value=<?=$eleve['niveau'] ?? null; ?> selected><?=$eleve['niveau'] ?? null; ?></option>
                     <option value="ci">CI</option>
                     <option value="cp">CP</option>
                     <option value="ce1">CE1</option>
@@ -84,25 +92,24 @@ $eleve = $eleveRepo->selectOne($id);
                     <option value="5eme">5eme</option>
                     <option value="4eme">4eme</option>
                     <option value="3eme">3eme</option>
-                    <option value="seconde">seconde</option>
-                    <option value="premiere">première</option>
-                    <option value="terminale">terminale</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="tuteur">Tuteur</label>
-                <input type="text" class="form-control" name="tuteur" id="tuteur" value=<?=$eleve['nom_tuteur'] ?? null; ?>>
+                <input type="text" class="form-control" name="tuteur" id="tuteur"
+                    value=<?=$eleve['nom_tuteur'] ?? null; ?>>
             </div>
             <div class="form-group">
                 <label for="num_tuteur">Numero tuteur</label>
-                <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur" value=<?=$eleve['numero_tuteur'] ?? null; ?>>
+                <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur"
+                    value=<?=$eleve['numero_tuteur'] ?? null; ?>>
             </div>
             <?php
             if (isset($_GET['edit_id'])):?>
-            
+
             <input type="hidden" name="id" value=<?=$_GET['edit_id']?> /> <input type="submit" name="modifier_eleve"
                 class="register" value="Modifier">
-                <?php
+            <?php
             else:
             ?>
             <input type="submit" name="ajout_eleve" class="register" value="Enregistrer">
@@ -116,7 +123,7 @@ $eleve = $eleveRepo->selectOne($id);
             include "footer.php";
         ?>
     <!--</footerer>-->
- 
+
 </body>
 
 </html>

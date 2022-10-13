@@ -87,25 +87,26 @@ if(!isset($_SESSION['email'])) {
                 <td><a href=<?="/projet_gestion_ecole/eleve/ajout?edit_id=".$eleve['id_eleve']?>>
                         <i class="fas fa-pen-to-square" style="color: royalblue;"></i>
                     </a>
-                    <a id="myBtn" class="archive" href="#">
+                    <span id="myBtn" data-id=<?= $eleve['id_eleve'] ?> class="archive">
                         <i style="margin-left: .5rem;color:red;" class="fas fa-trash"></i>
-                    </a>
+                    </span>
                     <!-- The Modal -->
-                    <div id="myModal" class="modal">
+                    <div id="popup">
+                        <div id="myModal" class="modal">
 
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <div style="display: flex;flex-direction: column;gap: 1rem;">
-                                <p style="font-size: 2rem;">Voulez vous vraiment supprimer cet eleve</p>
-                                <a href=<?="/projet_gestion_ecole/eleve/liste?id=".$eleve['id_eleve'] ?>
-                                    style="margin-top: 1rem;">
-                                    <span
-                                        style="padding: 1rem;background-color: darkred;color: white;width: 8%;">Supprimer</span>
-                                </a>
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div style="display: flex;flex-direction: column;gap: 1rem;">
+                                    <p style="font-size: 2rem;">Voulez vous vraiment supprimer cet eleve</p>
+                                    <form action="/projet_gestion_ecole/eleve/liste" method="get">
+                                        <input type="hidden" class="supprimer" name="id">
+                                        <input type="submit" value="Supprimer">
+                                    </form>
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </td>
             </tr>

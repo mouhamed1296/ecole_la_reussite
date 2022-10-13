@@ -1,7 +1,7 @@
 <?php
 require_once "Employe.php";
 //use Employe;
-class Admin extends Employe {
+class Secretaire extends Employe {
     /**
      * Class constructor.
      */
@@ -11,6 +11,6 @@ class Admin extends Employe {
     }
     
     public static function seConnecter(){
-       header("location: ../admin");
+       header("location: ../eleve/ajout");
     }
 }

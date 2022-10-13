@@ -6,7 +6,7 @@ RewriteRule admin views/dashboardAdmin.php
 RewriteRule eleve/ajout views/formEleve.php
 RewriteRule eleve/liste views/listeEleve.php
 RewriteRule employe/ajout views/formEployes.php
-RewriteRule employe/edit views/modifierEmployes.php
+RewriteRule employe/edit views/modifierEmploye.php
 # rewrite css files to their actual path
 RewriteRule ^css/(.+.css)$ views/css/$1 [L,NC]
 RewriteRule ^(.*)/css/(.+.css)$ views/css/$2 [L,NC]

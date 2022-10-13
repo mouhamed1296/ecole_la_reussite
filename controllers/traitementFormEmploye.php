@@ -11,26 +11,33 @@
      $mail = $_POST['email'];
      $mdp = $_POST['mdp']; 
      $hashed_mdp = password_hash($mdp, PASSWORD_DEFAULT);
-     $salaire = (float) $_POST['salaire'];
+     $salaire = $_POST['salaire'];
+     $edit_id = (int) $_POST['id'];
+     $page = isset($_POST['modifier_employe']) ? "edit?id=$edit_id&" : "ajout?";
+
      if (empty($nom)){
-      header("location: ../employe/ajout?erreur_vide_nom=Champ requis");
+      header("location: ../employe/".$page."erreur_vide_nom=Champ requis");
       exit;
      }
      if (empty($prenom)){
-      header("location: ../employe/ajout?erreur_vide_prenom=Champ requis");
+      header("location: ../employe/".$page."erreur_vide_prenom=Champ requis");
       exit;
      }
      if (empty($mail)){
-      header("location: ../employe/ajout?erreur_vide_mail=Champ requis");
+      header("location: ../employe/".$page."erreur_vide_mail=Champ requis");
       exit;
      }
      if (isset($_POST['ajout_employe'])){
      if (empty($mdp)){
-      header("location: ../employe/ajout?erreur_vide_mdp=Champ requis");
+      header("location: ../employe/".$page."erreur_vide_mdp=Champ requis");
       exit;
      }}
      if (empty($salaire)){
-      header("location: ../employe/ajout?erreur_vide_salaire=Champ requis");
+      header("location: ../employe/".$page."erreur_vide_salaire=Champ requis");
+      exit;
+     }
+     if (!filter_var($salaire, FILTER_VALIDATE_FLOAT)){
+      header("location: ../employe/".$page."erreur_invalid_salaire=veuillez sasir un nombre pour le salaire");
       exit;
      }
      if (isset($_POST['ajout_employe'])) {
@@ -76,10 +83,10 @@
       exit;
     }
      } else {
-      $edit_id = (int) $_POST['id'];
-        $sql = "UPDATE employe SET nom='$nom', prenom='$prenom', email='$mail', salaire='$salaire' WHERE id_emp=$edit_id";
+      $date_modif = date('y-m-d');
+        $sql = "UPDATE employe SET nom='$nom', prenom='$prenom', email='$mail', date_modif='$date_modif', salaire='$salaire' WHERE id_emp=$edit_id";
         $conn->exec($sql);
-        header("location: ../employe/ajout?success=employe modifié avec succés");
+        header("location: ../employe/".$page."success=employe modifié avec succés");
       exit;
      }
     }

@@ -5,7 +5,10 @@ if(isset($_POST["deconnecter"])) {
 }
 ?>
 <header class="header">
-    <img src="images/logo.png" alt="logo" id="logo">
+    <div style="display: flex;justify-content: center;align-items:center;">
+        <img src="images/logo.png" alt="logo" id="logo">
+        <?= (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) ? ''.$_SESSION['prenom'].' '.$_SESSION['nom'] : null; ?>
+    </div>
     <ul class="acceuil">
         <?php if (isset($_SESSION["email"])) : ?>
         <li>
