@@ -49,4 +49,37 @@ class EleveRepo {
         $sql="UPDATE eleve SET archive=1, date_archivage='$dateArchivage' WHERE id_eleve=$idEleve";
         $this->conn->exec($sql);
    }
+   public function modifier(int $idEleve)
+   {
+   
+$req =$this->conn->prepare('UPDATE eleve SET prenom = :prenom, nom = :nom , niveau = :niveau, tuteur= :tuteur  , numero_tuteur = :numero_tuteur WHERE id_eleve = $idEleve');
+
+$req->execute(array(
+
+       'nom' => $nom,
+       'prenom' => $prenom,
+       'niveau' => $email,
+       'tuteur' => $tuteur,
+       'numero_tuteur' => $numero_tuteur,
+       'date_naissance' => $date_naissance,
+       )
+       //on récupere l'informationde l'élève
+      
+
+
+    
+    );
+
+
+   }
+
+   public function selectOne($id){
+    $eleve = null;
+    $res = $this->conn->query("SELECT * FROM eleve WHERE id_eleve=$id");
+    //$res = $req->execute(['id_eleve' => $id]);
+    if ($res->rowCount() > 0) {
+        $eleve = $res->fetchAll()[0];
+    }
+    return $eleve;
+   }
 }
