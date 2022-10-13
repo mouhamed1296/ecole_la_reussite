@@ -91,7 +91,7 @@ if(!isset($_SESSION['email'])) {
             <?php endif; ?>
             <div class="form-group">
                 <label for="salaire">Salaire</label>
-                <input type="number" class="form-control" id="salaire" name="salaire"
+                <input type="text" class="form-control" id="salaire" name="salaire"
                     value=<?=$employe['salaire']??null; ?>>
                 <?php
                     if(isset($_GET["erreur_vide_salaire"])):

@@ -83,7 +83,8 @@
       exit;
     }
      } else {
-        $sql = "UPDATE employe SET nom='$nom', prenom='$prenom', email='$mail', mdp='$hashed_mdp', salaire='$salaire' WHERE id_emp=$edit_id";
+      $date_modif = date('y-m-d');
+        $sql = "UPDATE employe SET nom='$nom', prenom='$prenom', email='$mail', date_modif='$date_modif', salaire='$salaire' WHERE id_emp=$edit_id";
         $conn->exec($sql);
         header("location: ../employe/".$page."success=employe modifié avec succés");
       exit;

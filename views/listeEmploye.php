@@ -16,8 +16,8 @@
 
     <?php 
               //récupération des employés
-        require_once "../repositories/EmployeRepo.php";
-        $employeRepo = new EmployeRepo();                 //creation d'une instance de EmployeRepo
+        /* require_once "../repositories/EmployeRepo.php";
+        $employeRepo = new EmployeRepo();               */  //creation d'une instance de EmployeRepo
         if (isset($_GET['id'])) {
             $id_emp = (int) $_GET['id'];
             $employeRepo->archiver($id_emp);

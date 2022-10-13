@@ -69,7 +69,7 @@ $eleve = $eleveRepo->selectOne($id);
                     if(isset($_GET["erreur_email"])):
                         $email = $_GET["erreur_email"];
                 ?>
-                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"></span>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $email ?></span>
                 <?php endif; ?>
                 <?php
                     if(isset($_GET["erreur_invalid_email"])):
@@ -92,9 +92,6 @@ $eleve = $eleveRepo->selectOne($id);
                     <option value="5eme">5eme</option>
                     <option value="4eme">4eme</option>
                     <option value="3eme">3eme</option>
-                    <option value="seconde">seconde</option>
-                    <option value="premiere">première</option>
-                    <option value="terminale">terminale</option>
                 </select>
             </div>
             <div class="form-group">

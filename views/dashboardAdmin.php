@@ -1,9 +1,5 @@
 <?php
     session_start();
-<<<<<<< Updated upstream
-    if(!isset($_SESSION['email']) && !isset($_SESSION['mdp'])) {
-        header("location: ../connexion");
-=======
     if(!isset($_SESSION['email'])) {
         header("location: connexion");
         //var_dump($_SESSION['statut']);
@@ -11,11 +7,12 @@
     }
     if(isset($_SESSION['statut']) && $_SESSION['statut'] == "secretaire") {
         header("location: eleve/ajout");
->>>>>>> Stashed changes
         exit;
     }
 
-    $conn = require_once('../config/db.php');
+    //$conn = require_once('../config/db.php');
+    require_once "../repositories/EmployeRepo.php";
+        $employeRepo = new EmployeRepo();          
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,25 +72,28 @@
                 <div class="total">
                     <div class="nbrTotal">
                         <!-- Compter les élèves. -->
-                        <?php
-                            $comptEleve = "SELECT COUNT(*) FROM eleve";
-                            $res = $conn->query($comptEleve);
+                        <p style="font-size: 2rem;">
+                            <?php
+                            echo $employeRepo->countEleve();
                             /* $resultat = $conn->query($comptEleve ) or die ("La requête SQL a échoué !"); */
                 
                         ?>
+                        </p>
                     </div>
-                    <span>Élève</span>
+                    <span>Élèves</span>
                 </div>
             </a>
             <a href="employe/ajout" style="text-decoration: none; color:black">
                 <div class="total">
                     <div class="nbrTotal">
-                            <!-- Compter les employe. -->
-                        <?php
-                            $comptEmploye = "SELECT COUNT(*) FROM eleve";
-                            $res = $conn->query($comptEmploye);
-                            /* $resultat = $conn->query($comptEmploye) or die ("La requête SQL a échoué !"); */
+                        <!-- Compter les employe. -->
+                        <p style="font-size: 2rem;">
+                            <?php
+                            echo $employeRepo->count();
+                            /* $resultat = $conn->query($comptEleve ) or die ("La requête SQL a échoué !"); */
+                
                         ?>
+                        </p>
                     </div>
                     <span>Employés</span>
                 </div>
@@ -104,21 +104,21 @@
             include_once "listeEmploye.php";
             ?>
         </div>
-        </main>
+    </main>
 
-        <!-- <footer>-->
+    <!-- <footer>-->
 
-        <?php
+    <?php
             include "footer.php";
         ?>
 
 
-        <!--</footer>-->
+    <!--</footer>-->
 
 
 
 
-        <script src="js/dashboardAdmin.js"></script>
+    <script src="js/dashboardAdmin.js"></script>
 </body>
 
 </html>

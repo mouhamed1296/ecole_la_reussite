@@ -69,7 +69,8 @@
       }
   
       } else {
-        $sql = "UPDATE eleve SET nom='$nom', prenom='$prenom', email='$mail', niveau='$niveau', date_naiss='$dateNaissance', nom_tuteur='$tuteur', num_tuteur='$numTuteur' WHERE id_eleve=$edit_id";
+        $date_modif = date('y-m-d');
+        $sql = "UPDATE eleve SET nom='$nom', prenom='$prenom', email='$mail', niveau='$niveau', date_naiss='$dateNaissance', date_modif='$date_modif', nom_tuteur='$tuteur', numero_tuteur='$numTuteur' WHERE id_eleve=$edit_id";
         $conn->exec($sql);
         header("location: ../employe/".$page."success=Elève modifié avec succés");
       exit;
