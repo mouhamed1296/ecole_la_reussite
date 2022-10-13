@@ -36,7 +36,7 @@ class EleveRepo {
     {
     $eleves = [];
     $sql = "SELECT * FROM eleve where nom like '%$recherche%' or prenom like  '%$recherche%'  or niveau like '%$recherche%' ORDER BY id_eleve DESC" ;
-       $reponse = $this->conn->query($sql);
+       $reponse= $this->conn->query($sql);
        if ($reponse->rowCount() > 0) {
            $eleves = $reponse->fetchAll();
        }
@@ -49,7 +49,7 @@ class EleveRepo {
         $sql="UPDATE eleve SET archive=1, date_archivage='$dateArchivage' WHERE id_eleve=$idEleve";
         $this->conn->exec($sql);
    }
-   public function modifier(int $idEleve)
+   public function modifier( int $idEleve, $nom, $prenom, $email, $tuteur, $numero_tuteur, $date_naissance)
    {
    
 $req =$this->conn->prepare('UPDATE eleve SET prenom = :prenom, nom = :nom , niveau = :niveau, tuteur= :tuteur  , numero_tuteur = :numero_tuteur WHERE id_eleve = $idEleve');
@@ -70,8 +70,8 @@ $req->execute(array(
     
     );
 
-
-   }
+}
+  
 
    public function selectOne($id){
     $eleve = null;
