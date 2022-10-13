@@ -74,7 +74,7 @@
                         <!-- Compter les élèves. -->
                         <p style="font-size: 2rem;">
                             <?php
-                            echo $employeRepo->countEleve();
+                            echo $employeRepo->countEleve() ?? 0;
                             /* $resultat = $conn->query($comptEleve ) or die ("La requête SQL a échoué !"); */
                 
                         ?>
@@ -89,7 +89,7 @@
                         <!-- Compter les employe. -->
                         <p style="font-size: 2rem;">
                             <?php
-                            echo $employeRepo->count();
+                            echo $employeRepo->count() ?? 0;
                             /* $resultat = $conn->query($comptEleve ) or die ("La requête SQL a échoué !"); */
                 
                         ?>

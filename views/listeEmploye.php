@@ -4,7 +4,7 @@
 </form>
 
 <a href="/projet_gestion_ecole/views/listeEmployeArchive.php"
-    style="margin-left: 30rem;padding: 1rem;background-color: lightgrey;text-decoration: none;color: black;">Liste
+    style="margin-left: 30rem;padding: 1rem;background-color: lightgrey;text-decoration: none;color: black;width:10%;">Liste
     eleve
     archivé</a>
 
