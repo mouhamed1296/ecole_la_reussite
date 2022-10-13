@@ -1,6 +1,7 @@
 <?php
-//inclusion du modèle Admin
+//inclusion des modèles
 require "../models/Admin.php";
+require "../models/Secretaire.php";
 //Démarrage de la session
 session_start();
 
@@ -51,15 +52,16 @@ if(isset($email) && isset($mdp)){
             header("location: ../connexion?erreur_mdp=".$erreur["invalidMdp"]);
             exit;
         }
-
-
-
+        $_SESSION["nom"] = $user["nom"];
+        $_SESSION["prenom"] = $user["prenom"];
+        $_SESSION["email"] = $user["email"];
+        $_SESSION["statut"] = $statut;
         //vérification du statut de l'utilisateur
         if ($statut === "admin"){
-            $_SESSION["nom"] = $user["nom"];
-            $_SESSION["prenom"] = $user["prenom"];
-            $_SESSION["email"] = $user["email"];
             Admin::seConnecter();
+        }
+        if ($statut === "secretaire") {
+            Secretaire::seConnecter();
         }
     }
   //verification email et mdp

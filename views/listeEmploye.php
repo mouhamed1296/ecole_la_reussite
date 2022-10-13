@@ -38,27 +38,29 @@
         <td><?= $employe['statut']?></td>
         <td><?= $employe['salaire']?></td>
         <td>
-            <a href=<?="/projet_gestion_ecole/employe/ajout?edit_id=".$employe['id_emp']?>>
+            <a href=<?="/projet_gestion_ecole/employe/edit?edit_id=".$employe['id_emp']?>>
                 <i class="fas fa-pen-to-square" style="color: royalblue;"></i>
             </a>
-            <span id="myBtn" class="archive">
+            <span id="myBtn" data-id=<?= $employe['id_emp'] ?> class="archive">
                 <i style="margin-left: .5rem;color:red;" class="fas fa-trash"></i>
             </span>
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="popup">
+                <div id="myModal" class="modal">
 
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div style="display: flex;flex-direction: column;gap: 1rem;">
-                        <p style="font-size: 2rem;">Voulez vous vraiment supprimer cet eleve</p>
-                        <a href=<?="/projet_gestion_ecole/admin?id=".$employe['id_emp'] ?> style="margin-top: 1rem;">
-                            <span
-                                style="padding: 1rem;background-color: darkred;color: white;width: 8%;">Supprimer</span>
-                        </a>
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div style="display: flex;flex-direction: column;gap: 1rem;">
+                            <p style="font-size: 2rem;">Voulez vous vraiment supprimer cet eleve</p>
+                            <form action="/projet_gestion_ecole/admin" method="get">
+                                <input type="hidden" class="supprimer" name="id">
+                                <input type="submit" value="Supprimer">
+                            </form>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </td>
     </tr>

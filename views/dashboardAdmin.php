@@ -1,7 +1,17 @@
 <?php
     session_start();
+<<<<<<< Updated upstream
     if(!isset($_SESSION['email']) && !isset($_SESSION['mdp'])) {
         header("location: ../connexion");
+=======
+    if(!isset($_SESSION['email'])) {
+        header("location: connexion");
+        //var_dump($_SESSION['statut']);
+        exit;
+    }
+    if(isset($_SESSION['statut']) && $_SESSION['statut'] == "secretaire") {
+        header("location: eleve/ajout");
+>>>>>>> Stashed changes
         exit;
     }
 
