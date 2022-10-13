@@ -59,13 +59,13 @@
         </div>
 
         <div id="tab">
-            <a href="eleve/ajout">
+            <a href="eleve/ajout" style="text-decoration: none; color:black;">
                 <div class="total">
                     <div class="nbrTotal"></div>
                     <span>Élève</span>
                 </div>
             </a>
-            <a href="employe/ajout">
+            <a href="employe/ajout" style="text-decoration: none; color:black">
                 <div class="total">
                     <div class="nbrTotal"></div>
                     <span>Employés</span>
