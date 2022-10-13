@@ -48,8 +48,10 @@
      $sql = "SELECT email FROM employe WHERE email='$mail'";
      $res = $conn->query($sql);
      if ($res->rowCount() > 0){
+      if (isset($_POST['ajout_eleve'])) {
       header("location: ../employe/ajout?erreur_email=addresse email déja pris");
       exit;
+      }
      }
      
      // afficher le résultat 

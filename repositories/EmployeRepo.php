@@ -47,6 +47,11 @@ class EmployeRepo {
         $sql="UPDATE employe SET archive=1, date_archivage='$dateArchivage' WHERE id_emp=$idEmploye";
         $this->conn->exec($sql);
    }
+   public function desarchiver(int $idEmploye)
+   {
+        $sql="UPDATE employe SET archive=0, date_archivage=NULL WHERE id_emp=$idEmploye";
+        $this->conn->exec($sql);
+   }
    //on récupere l'informationde l'élève
    public function selectOne($idEmp){
     $employe = null;
@@ -59,12 +64,22 @@ class EmployeRepo {
    }
 
    public function count(){
-    $comptEleve = "SELECT COUNT(*) FROM employe";
+    $comptEleve = "SELECT COUNT(*) FROM employe WHERE archive=0";
     $res = $this->conn->query($comptEleve);
     return $res->fetchColumn();
    }
    public function countEleve(){
-    $compteEleve ="SELECT COUNT(*) FROM eleve";
+    $compteEleve ="SELECT COUNT(*) FROM eleve WHERE archive=0";
+    $res = $this->conn->query($compteEleve);
+    return $res->fetchColumn();
+   }
+   public function countArchiver(){
+    $comptEleve = "SELECT COUNT(*) FROM employe WHERE archive=1";
+    $res = $this->conn->query($comptEleve);
+    return $res->fetchColumn();
+   }
+   public function countEleveArchiver(){
+    $compteEleve ="SELECT COUNT(*) FROM eleve WHERE archive=1";
     $res = $this->conn->query($compteEleve);
     return $res->fetchColumn();
    }

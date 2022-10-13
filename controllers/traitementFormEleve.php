@@ -6,11 +6,11 @@
      /* récupérer les données du formulaire en utilisant 
         la valeur des attributs name comme clé 
        */
-     $nom = $_POST['nom']; 
-     $prenom = $_POST['prenom']; 
+     $nom = trim($_POST['nom']); 
+     $prenom = trim($_POST['prenom']); 
      $mail = $_POST['email'];
      $niveau = $_POST['niveau']; 
-     $tuteur = $_POST['tuteur'];
+     $tuteur = trim($_POST['tuteur']);
      $numTuteur = (int) $_POST['num_tuteur'];
      $dateNaissance = $_POST['date_naiss'];
      $edit_id = (int) $_POST['id'];
@@ -22,6 +22,14 @@
      }
      if (empty($prenom)){
       header("location: ../eleve/".$page."erreur_vide_prenom=Champ requis");
+      exit;
+     }
+     if (empty($tuteur)){
+      header("location: ../eleve/".$page."erreur_vide_tuteur=Champ requis");
+      exit;
+     }
+     if (empty($numTuteur)){
+      header("location: ../eleve/".$page."erreur_vide_num_tuteur=Champ requis");
       exit;
      }
      if (empty($mail)){
@@ -37,8 +45,10 @@
      $sql = "SELECT email FROM eleve WHERE email='$mail'";
      $res = $conn->query($sql);
      if ($res->rowCount() > 0){
-      header("location: ../eleve/".$page."erreur_email=addresse email déja pris");
-      exit;
+      if (isset($_POST['ajout_eleve'])) {
+        header("location: ../eleve/".$page."erreur_email=addresse email déja pris");
+        exit;
+      }
      }
      
      // afficher le résultat 
