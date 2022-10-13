@@ -4,9 +4,11 @@ if(!isset($_SESSION['email'])) {
     header("location: ../connexion");
     exit;
 }
-if (isset($_GET['edit_id'])) $id = (int) $_GET['edit_id'];
+if (isset($_GET['edit_id'])) {   
+    $id = (int) $_GET['edit_id'];
 $eleveRepo = new EleveRepo();
 $eleve = $eleveRepo->selectOne($id);
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,19 +50,19 @@ $eleve = $eleveRepo->selectOne($id);
 
             <div class="form-group">
                 <label for="nom">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" value=<?=$eleve['nom']; ?>>
+                <input type="text" class="form-control" id="nom" name="nom" value=<?=$eleve['nom'] ?? null; ?>>
             </div>
             <div class="form-group">
                 <label for="prenom">Prenom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" value=<?=$eleve['prenom']; ?>>
+                <input type="text" class="form-control" id="prenom" name="prenom" value=<?=$eleve['prenom'] ?? null ; ?>>
             </div>
             <div class="form-group">
                 <label for="date_naiss">Date naissance</label>
-                <input type="date" class="form-control" id="date_naiss" name="date_naiss" value=<?=$eleve['date_naiss']; ?>>
+                <input type="date" class="form-control" id="date_naiss" name="date_naiss" value=<?=$eleve['date_naiss'] ?? null; ?>>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value=<?=$eleve['email']; ?>>
+                <input type="email" class="form-control" id="email" name="email" value=<?=$eleve['email'] ?? null; ?>>
                 <?php
                     if(isset($_GET["erreur_email"])):
                         $email = $_GET["erreur_email"];
@@ -70,7 +72,8 @@ $eleve = $eleveRepo->selectOne($id);
             </div>
             <div class="form-group">
                 <label for="niveau">Niveau</label>
-                <select name="niveau" class="form-control" id="niveau">
+                <select name="niveau" class="form-control" id="niveau" >
+                <option value=<?=$eleve['niveau'] ?? null; ?> selected><?=$eleve['niveau'] ?? null; ?></option>
                     <option value="ci">CI</option>
                     <option value="cp">CP</option>
                     <option value="ce1">CE1</option>
@@ -88,11 +91,11 @@ $eleve = $eleveRepo->selectOne($id);
             </div>
             <div class="form-group">
                 <label for="tuteur">Tuteur</label>
-                <input type="text" class="form-control" name="tuteur" id="tuteur" value=<?=$eleve['nom_tuteur']; ?>>
+                <input type="text" class="form-control" name="tuteur" id="tuteur" value=<?=$eleve['nom_tuteur'] ?? null; ?>>
             </div>
             <div class="form-group">
                 <label for="num_tuteur">Numero tuteur</label>
-                <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur" value=<?=$eleve['numero_tuteur']; ?>>
+                <input type="tel" class="form-control" id="num_tuteur" name="num_tuteur" value=<?=$eleve['numero_tuteur'] ?? null; ?>>
             </div>
             <?php
             if (isset($_GET['edit_id'])):?>
@@ -102,7 +105,7 @@ $eleve = $eleveRepo->selectOne($id);
                 <?php
             else:
             ?>
-            <input type="submit" name="ajout_eleve" class="register" value="Enregistrer" value=">
+            <input type="submit" name="ajout_eleve" class="register" value="Enregistrer">
             <?php
             endif;
             ?>
