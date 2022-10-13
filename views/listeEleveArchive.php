@@ -63,7 +63,7 @@ if(!isset($_SESSION['email'])) {
                 $eleveRepo = new EleveRepo();
                 if (isset($_GET['id'])) {
                         $id_elv = (int) $_GET['id'];
-                        $eleveRepo->archiver($id_elv);
+                        $eleveRepo->desarchiver($id_elv);
                 }                      //creation d'une instance de EleveRepo
                 $eleves = $eleveRepo->selectAllArchive();     //appel de la méthode selectAll
                 if (isset($_GET["recherche"])){
@@ -88,7 +88,7 @@ if(!isset($_SESSION['email'])) {
                         <i class="fas fa-pen-to-square" style="color: royalblue;"></i>
                     </a>
                     <span id="myBtn" data-id=<?= $eleve['id_eleve'] ?> class="archive"
-                        style="display: flex;padding: 1rem;background-color: lightgrey;">
+                        style="display: flex;padding: .5rem;background-color: lightgrey; margin-top: .5rem;">
                         désarchiver
                     </span>
                     <!-- The Modal -->
@@ -100,7 +100,7 @@ if(!isset($_SESSION['email'])) {
                                 <span class="close">&times;</span>
                                 <div style="display: flex;flex-direction: column;gap: 1rem;">
                                     <p style="font-size: 2rem;">Voulez vous vraiment désarchiver cet eleve</p>
-                                    <form action="/projet_gestion_ecole/eleve/listeArchive" method="get">
+                                    <form action="/projet_gestion_ecole/views/listeEleveArchive.php" method="get">
                                         <input type="hidden" class="supprimer" name="id">
                                         <input type="submit" value="désarchiver">
                                     </form>

@@ -42,8 +42,9 @@ if(!isset($_SESSION['email'])) {
 
         </form>
 
-        <a href="/projet_getion_ecole/eleve/listeArchive"
-            style="padding: 1rem;background-color: lightgrey;text-decoration: none;color: darkgrey;">Liste eleve
+        <a href="/projet_gestion_ecole/views/listeEleveArchive.php"
+            style="margin-left: 30rem;padding: 1rem;background-color: lightgrey;text-decoration: none;color: black;">Liste
+            eleve
             archivé</a>
 
         <table>

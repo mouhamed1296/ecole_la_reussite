@@ -49,6 +49,12 @@ class EleveRepo {
         $sql="UPDATE eleve SET archive=1, date_archivage='$dateArchivage' WHERE id_eleve=$idEleve";
         $this->conn->exec($sql);
    }
+   public function desarchiver(int $idEleve)
+   {
+        
+        $sql="UPDATE eleve SET archive=0, date_archivage=NULL WHERE id_eleve=$idEleve";
+        $this->conn->exec($sql);
+   }
    public function modifier($nom, $prenom, $email, $tuteur, $numeroTuteur, $dateNaissance)
    {
    
