@@ -24,10 +24,11 @@
       header("location: ../employe/ajout?erreur_vide_mail=Champ requis");
       exit;
      }
+     if (isset($_POST['ajout_employe'])){
      if (empty($mdp)){
       header("location: ../employe/ajout?erreur_vide_mdp=Champ requis");
       exit;
-     }
+     }}
      if (empty($salaire)){
       header("location: ../employe/ajout?erreur_vide_salaire=Champ requis");
       exit;
@@ -76,7 +77,7 @@
     }
      } else {
       $edit_id = (int) $_POST['id'];
-        $sql = "UPDATE employe SET nom='$nom', prenom='$prenom', email='$mail', mdp='$hashed_mdp', salaire='$salaire' WHERE id_emp=$edit_id";
+        $sql = "UPDATE employe SET nom='$nom', prenom='$prenom', email='$mail', salaire='$salaire' WHERE id_emp=$edit_id";
         $conn->exec($sql);
         header("location: ../employe/ajout?success=employe modifié avec succés");
       exit;

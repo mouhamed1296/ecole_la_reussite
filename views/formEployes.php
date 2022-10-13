@@ -1,8 +1,15 @@
-<?php session_start(); 
+<?php session_start();
+include_once "../repositories/EmployeRepo.php"; 
 if(!isset($_SESSION['email'])) {
     header("location: ../connexion");
     exit;
 }
+
+                if (isset($_GET['edit_id'])) {
+                    $id = (int) $_GET['edit_id'];
+                $employeRepo = new EmployeRepo();
+                $employe = $employeRepo->selectOne($id);
+            }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +38,7 @@ if(!isset($_SESSION['email'])) {
     <!--<header>-->
     <?php
             include "header.php";
+            
         ?>
     <!--</header>-->
     <div id="form_ajout">
@@ -38,6 +46,7 @@ if(!isset($_SESSION['email'])) {
         <?php
             if (isset($_GET["success"])):
                 $message = $_GET["success"];
+                
          ?>
         <span style="padding: 1rem;background-color: lightgreen; color: darkgreen;margin: 1rem;">
             <?= $message ?>
@@ -46,7 +55,7 @@ if(!isset($_SESSION['email'])) {
         <form action="../controllers/traitementFormEmploye.php" method="POST">
             <div class="form-group">
                 <label for="nom">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom">
+                <input type="text" class="form-control" id="nom" name="nom" value=<?=$employe['nom']??null; ?>>
                 <?php
                     if(isset($_GET["erreur_vide_nom"])):
                         $vide = $_GET["erreur_vide_nom"];
@@ -56,7 +65,7 @@ if(!isset($_SESSION['email'])) {
             </div>
             <div class="form-group">
                 <label for="prenom">Prenom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom">
+                <input type="text" class="form-control" id="prenom" name="prenom" value=<?=$employe['prenom']??null; ?>>
                 <?php
                     if(isset($_GET["erreur_vide_prenom"])):
                         $vide = $_GET["erreur_vide_prenom"];
@@ -66,7 +75,7 @@ if(!isset($_SESSION['email'])) {
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email"value=<?=$employe['email']??null; ?>>
             </div>
             <?php
                     if(isset($_GET["erreur_email"])):
@@ -81,18 +90,8 @@ if(!isset($_SESSION['email'])) {
             <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $vide ?></span>
             <?php endif; ?>
             <div class="form-group">
-                <label for="mdp">Mot de passe</label>
-                <input type="password" class="form-control" name="mdp" id="mdp">
-                <?php
-                    if(isset($_GET["erreur_vide_mdp"])):
-                        $vide = $_GET["erreur_vide_mdp"];
-                ?>
-                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $vide ?></span>
-                <?php endif; ?>
-            </div>
-            <div class="form-group">
                 <label for="salaire">Salaire</label>
-                <input type="number" class="form-control" id="salaire" name="salaire">
+                <input type="number" class="form-control" id="salaire" name="salaire" value=<?=$employe['salaire']??null; ?>>
                 <?php
                     if(isset($_GET["erreur_vide_salaire"])):
                         $vide = $_GET["erreur_vide_salaire"];
@@ -108,9 +107,21 @@ if(!isset($_SESSION['email'])) {
             <?php
             else:
             ?>
+             <div class="form-group">
+                <label for="mdp">Mot de passe</label>
+                <input type="password" class="form-control" name="mdp" id="mdp">
+                <?php
+                    if(isset($_GET["erreur_vide_mdp"])):
+                        $vide = $_GET["erreur_vide_mdp"];
+                ?>
+                <span style="padding: 1rem;background-color: #ffcccb; color: darkred;"><?= $vide ?></span>
+                <?php endif; ?>
+            </div>
             <div class="form-group">
                 <label for="statut">Statut</label>
                 <select name="statut" class="form-control" id="statut">
+                    <option value=<?=$employe['statut'] ?? null; ?>selected><?=$employe['statut'] ?? null; ?>
+                    </option>
                     <option value="enseignant">Enseignant</option>
                     <option value="secretaire">Secrétaire</option>
                     <option value="admin">Admin</option>
@@ -121,6 +132,8 @@ if(!isset($_SESSION['email'])) {
             <div class="form-group" id="ens">
                 <label for="statut_ens">Niveau Enseigné</label>
                 <select name="statut_ens" class="form-control" id="statut_ens">
+                <option value=<?=$employe['statut_ens'] ?? null; ?>selected><?=$employe['statut_ens'] ?? null; ?>
+                    </option>
                     <option value="primaire">Primaire</option>
                     <option value="secondaire">Secondaire</option>
                 </select>
